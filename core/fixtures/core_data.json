@@ -1,0 +1,73 @@
+[
+{
+    "model": "core.bank",
+    "pk": 1,
+    "fields": {
+        "bank": "ameria"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 2,
+    "fields": {
+        "bank": "evoca"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 3,
+    "fields": {
+        "bank": "ineco"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 4,
+    "fields": {
+        "bank": "akba"
+    }
+},
+{
+    "model": "core.bankbranch",
+    "pk": 1,
+    "fields": {
+        "bank": 1,
+        "city": "Երևան",
+        "address": "Մաշտոցի պող․ 20/4",
+        "branchCode": "0001",
+        "phone": "+37411111111"
+    }
+},
+{
+    "model": "core.bankbranch",
+    "pk": 2,
+    "fields": {
+        "bank": 2,
+        "city": "Երևան",
+        "address": "Թումանյան 15",
+        "branchCode": "0002",
+        "phone": "+37422222222"
+    }
+},
+{
+    "model": "core.bankbranch",
+    "pk": 3,
+    "fields": {
+        "bank": 1,
+        "city": "Երևան",
+        "address": "Մոսկովյան պող․ 48, 2/1",
+        "branchCode": "0011",
+        "phone": "+37401010101"
+    }
+},
+{
+    "model": "core.bankaction",
+    "pk": 1,
+    "fields": {
+        "bankaction": "qart",
+        "bank": 1,
+        "branch": 3,
+        "scheduled_time": "2026-03-20T14:30:00Z"
+    }
+}
+]
