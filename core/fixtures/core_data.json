@@ -1,11 +1,116 @@
 [
-  {"model": "core.service", "pk": 1, "fields": {"type": "water"}}, 
-  {"model": "core.service", "pk": 2, "fields": {"type": "energy"}}, 
-  {"model": "core.service", "pk": 3, "fields": {"type": "gas"}}, 
-  {"model": "core.servicebranch", "pk": 1, "fields": {"service": 2, "name": "wewewe", "city": "Yerevan", "branchCode": 111, "address": "fafdasf", "phone": "54353434545"}}, 
-  {"model": "core.bank", "pk": 1, "fields": {"bank": "ameria"}}, 
-  {"model": "core.bank", "pk": 2, "fields": {"bank": "evoca"}}, 
-  {"model": "core.bank", "pk": 3, "fields": {"bank": "ineco"}}, 
-  {"model": "core.bank", "pk": 4, "fields": {"bank": "akba"}}, 
-  {"model": "core.bankbranch", "pk": 1, "fields": {"bank": 1, "city": "Yerevan"}}
+{
+    "model": "core.service",
+    "pk": 1,
+    "fields": {
+        "type": "water"
+    }
+},
+{
+    "model": "core.service",
+    "pk": 2,
+    "fields": {
+        "type": "energy"
+    }
+},
+{
+    "model": "core.service",
+    "pk": 3,
+    "fields": {
+        "type": "gas"
+    }
+},
+{
+    "model": "core.servicebranch",
+    "pk": 2,
+    "fields": {
+        "service": 1,
+        "name": "Veolia",
+        "city": "Երևան",
+        "branchCode": 1101,
+        "address": "Ֆուչիկի փող. 8",
+        "phone": "+37422222222"
+    }
+},
+{
+    "model": "core.serviceaction",
+    "pk": 1,
+    "fields": {
+        "actiontype": "Jrachapi poxarinum",
+        "service": 1,
+        "branch": 2,
+        "scheduled_time": "2026-03-18T13:35:00Z"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 1,
+    "fields": {
+        "bank": "ameria"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 2,
+    "fields": {
+        "bank": "evoca"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 3,
+    "fields": {
+        "bank": "ineco"
+    }
+},
+{
+    "model": "core.bank",
+    "pk": 4,
+    "fields": {
+        "bank": "akba"
+    }
+},
+{
+    "model": "core.bankbranch",
+    "pk": 2,
+    "fields": {
+        "bank": 2,
+        "city": "Երևան",
+        "address": "Թումանյան 15",
+        "branchCode": "0002",
+        "phone": "+37422222222"
+    }
+},
+{
+    "model": "core.bankbranch",
+    "pk": 3,
+    "fields": {
+        "bank": 1,
+        "city": "Երևան",
+        "address": "Մոսկովյան պող․ 48, 2/1",
+        "branchCode": "0011",
+        "phone": "+37401010101"
+    }
+},
+{
+    "model": "core.bankbranch",
+    "pk": 4,
+    "fields": {
+        "bank": 1,
+        "city": "Երևան",
+        "address": "Մաշտոցի պող․ 20/4",
+        "branchCode": "0065",
+        "phone": "+37455555555"
+    }
+},
+{
+    "model": "core.bankaction",
+    "pk": 1,
+    "fields": {
+        "bankaction": "qart",
+        "bank": 1,
+        "branch": 3,
+        "scheduled_time": "2026-03-20T14:30:00Z"
+    }
+}
 ]
