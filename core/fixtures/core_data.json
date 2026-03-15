@@ -3,6 +3,7 @@
     "model": "core.service",
     "pk": 1,
     "fields": {
+        "name": null,
         "type": "water"
     }
 },
@@ -10,6 +11,7 @@
     "model": "core.service",
     "pk": 2,
     "fields": {
+        "name": null,
         "type": "energy"
     }
 },
@@ -17,6 +19,7 @@
     "model": "core.service",
     "pk": 3,
     "fields": {
+        "name": null,
         "type": "gas"
     }
 },
@@ -33,13 +36,91 @@
     }
 },
 {
+    "model": "core.servicebranch",
+    "pk": 3,
+    "fields": {
+        "service": 1,
+        "name": "Veolia",
+        "city": "Երևան",
+        "branchCode": 1203,
+        "address": "Մազմանյան փող․",
+        "phone": "+37416161616"
+    }
+},
+{
     "model": "core.serviceaction",
-    "pk": 1,
+    "pk": 2,
     "fields": {
         "actiontype": "Jrachapi poxarinum",
         "service": 1,
         "branch": 2,
-        "scheduled_time": "2026-03-18T13:35:00Z"
+        "scheduled_time": "2026-03-27T15:10:00Z"
+    }
+},
+{
+    "model": "core.serviceaction",
+    "pk": 3,
+    "fields": {
+        "actiontype": "Jrachapi poxarinum",
+        "service": 1,
+        "branch": 3,
+        "scheduled_time": "2026-03-28T14:30:00Z"
+    }
+},
+{
+    "model": "core.telecom",
+    "pk": 1,
+    "fields": {
+        "telecom": "viva"
+    }
+},
+{
+    "model": "core.telecombranch",
+    "pk": 1,
+    "fields": {
+        "telecom": 1,
+        "city": "Երևան",
+        "address": "Դալմա",
+        "branchCode": "4534",
+        "phone": "+37444444444"
+    }
+},
+{
+    "model": "core.telecomaction",
+    "pk": 1,
+    "fields": {
+        "telecomaction": "bajanord",
+        "telecom": 1,
+        "branch": 1,
+        "scheduled_time": "2026-04-07T13:35:00Z"
+    }
+},
+{
+    "model": "core.government",
+    "pk": 1,
+    "fields": {
+        "government": "ngn"
+    }
+},
+{
+    "model": "core.governmentbranch",
+    "pk": 1,
+    "fields": {
+        "government": 1,
+        "city": "Երևան",
+        "address": "Գաջեգործների փող․ 76 շենք",
+        "branchCode": "1237",
+        "phone": "+37412345678"
+    }
+},
+{
+    "model": "core.governmentaction",
+    "pk": 1,
+    "fields": {
+        "governmentaction": "gorcnakan",
+        "government": 1,
+        "branch": 1,
+        "scheduled_time": "2026-03-27T14:30:00Z"
     }
 },
 {

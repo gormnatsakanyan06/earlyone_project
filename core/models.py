@@ -11,10 +11,14 @@ class Service(models.Model):
         ("gas", "Գազի սպասարկում")
     ]
 
+    # ADD THIS LINE:
+    name = models.CharField(max_length=100, null=True, blank=True)
+    
     type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True)
 
     def __str__(self):
-        return self.get_type_display()
+        # Now this will work!
+        return self.name if self.name else self.get_type_display()
 
 
 class ServiceBranch(models.Model):
@@ -66,7 +70,11 @@ class ServiceAction(models.Model):
     scheduled_time = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.service.get_type_display()} | {self.branch.name} | {self.branch.address} | {self.actiontype}"
+        service_display = str(self.service)
+        branch_display = self.branch.address if self.branch else "No Branch"
+        action_display = self.get_actiontype_display()
+        
+        return f"{service_display} | {branch_display} | {action_display}"
 
 
 # Telecom
