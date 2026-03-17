@@ -35,6 +35,9 @@ def create_qr_and_save(text):
 
 @api_view(['POST'])
 def create_qr(request):
+    if request.method == 'GET':
+        return Response({"message": "The QR API is active. Send a POST request with 'text' to generate a code."})
+    
     text = request.data.get("text")
 
     if not text:
@@ -61,3 +64,5 @@ def download_qr(request, qr_id):
     response['Content-Disposition'] = f'attachment; filename="qr_{qr_id}.png"'
 
     return response
+
+

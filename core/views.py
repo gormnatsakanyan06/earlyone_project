@@ -124,3 +124,6 @@ def home(request):
     return HttpResponse("Earlyone server is running 🚀")
 
 # Create your views here.
+
+
+
