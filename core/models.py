@@ -2,6 +2,15 @@ from django.db import models
 from smart_selects.db_fields import ChainedForeignKey
 
 
+
+class QRCode(models.Model):
+    text = models.TextField(unique=True)  
+    image = models.ImageField(upload_to='qr_codes/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
+
 # Service
 
 class Service(models.Model):

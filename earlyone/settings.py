@@ -13,11 +13,12 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes', 
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'smart_selects',
+    'rest_framework',
     'core',
 ]
 
@@ -86,3 +87,9 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
+
+
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

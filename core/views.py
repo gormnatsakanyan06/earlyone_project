@@ -1,6 +1,43 @@
 from django.http import JsonResponse ,HttpResponse
 from .models import *
 
+
+#QR
+import qrcode
+from io import BytesIO
+import base64
+
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
+
+def generate_qr_base64(data):
+    qr = qrcode.make(data)
+
+    buffer = BytesIO()
+    qr.save(buffer, format="PNG")
+
+    img_bytes = buffer.getvalue()
+    base64_str = base64.b64encode(img_bytes).decode()
+
+    return base64_str
+
+
+
+@api_view(['GET', 'POST'])
+def create_qr(request):
+    data = request.data.get("text") or request.GET.get("text")
+
+    if not data:
+        return Response({"error": "No text provided"}, status=400)
+
+    qr_base64 = generate_qr_base64(data)
+
+    return Response({
+        "qr_code": qr_base64
+    })
+
+#QR
 #Banks
 def banks(request):
     banks = list(Bank.objects.values())
@@ -85,4 +122,5 @@ def telecom_actions(request):
 
 def home(request):
     return HttpResponse("Earlyone server is running 🚀")
+
 # Create your views here.
