@@ -1,21 +1,14 @@
 [
 {
-    "model": "core.qrcode",
-    "pk": 3,
-    "fields": {
-        "text": "barevvvv",
-        "image": "qr_codes/81ea88ee-ce8e-4230-bd93-d927af28d422.png",
-        "created_at": "2026-03-17T16:10:42.935Z"
-    }
-},
-{
-    "model": "core.qrcode",
-    "pk": 5,
-    "fields": {
-        "text": "hajoxxx",
-        "image": "qr_codes/8da8c763-db47-42b8-abb0-5ab0de429660.png",
-        "created_at": "2026-03-17T16:15:42.652Z"
-    }
+
+
+  "model": "core.service",
+  "pk": 1,
+  "fields": {
+    "name": null,
+    "type": "water"
+  }
+
 },
 {
     "model": "core.service",
@@ -239,24 +232,38 @@
     }
 },
 {
-    "model": "core.bankbranch",
-    "pk": 4,
-    "fields": {
-        "bank": 1,
-        "city": "Երևան",
-        "address": "Մաշտոցի պող․ 20/4",
-        "branchCode": "0065",
-        "phone": "+37455555555"
-    }
+
+
+  "model": "core.bankaction",
+  "pk": 1,
+  "fields": {
+    "bankaction": "qart",
+    "bank": 1,
+    "branch": 3,
+    "scheduled_time": "2026-03-20T14:30:00Z"
+  }
 },
 {
-    "model": "core.bankaction",
-    "pk": 1,
-    "fields": {
-        "bankaction": "qart",
-        "bank": 1,
-        "branch": 3,
-        "scheduled_time": "2026-03-20T14:30:00Z"
-    }
+  "model": "core.appointment",
+  "pk": 1,
+  "fields": {
+    "chosen": "financve am ehsdbuystg",
+    "gmail": "dsghjhgt@gmail.com",
+    "verif_code": "3343",
+    "image": "qr_codes/Screenshot_2026-02-26_124207.png"
+  }
+},
+{
+  "model": "core.contact",
+  "pk": 1,
+  "fields": {
+    "type": "Customer",
+    "name": "gdrfgdgtfdg",
+    "email": "dfgdfgd",
+    "phone": "74545645",
+    "message": "dfgdfg",
+    "company": "dgdfgd"
+  }
+
 }
 ]

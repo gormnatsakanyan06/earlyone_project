@@ -6,13 +6,13 @@ from io import BytesIO
 import qrcode
 import uuid
 
-from .models import QRCode
-def create_qr_and_save(text):
+from .models import Appointment
+def create_qr_and_save(verif_code):
     # check if already exists
-    if QRCode.objects.filter(text=text).exists():
-        return QRCode.objects.get(text=text)
+    if Appointment.objects.filter(verif_code=verif_code).exists():
+        return Appointment.objects.get(verif_code=verif_code)
 
-    qr = qrcode.make(text)
+    qr = qrcode.make(verif_code)
 
     buffer = BytesIO()
     qr.save(buffer, format='PNG')
@@ -22,8 +22,8 @@ def create_qr_and_save(text):
     file_name = f"{uuid.uuid4()}.png"
     file = File(buffer, name=file_name)
 
-    qr_instance = QRCode.objects.create(
-        text=text,
+    qr_instance = Appointment.objects.create(
+        verif_code=verif_code,
         image=file
     )
 
@@ -35,19 +35,18 @@ def create_qr_and_save(text):
 
 @api_view(['POST'])
 def create_qr(request):
-    if request.method == 'GET':
-        return Response({"message": "The QR API is active. Send a POST request with 'text' to generate a code."})
-    
-    text = request.data.get("text")
 
-    if not text:
-        return Response({"error": "No text provided"}, status=400)
+    verif_code = request.data.get("verif_code")
 
-    qr = create_qr_and_save(text)
+
+    if not verif_code:
+        return Response({"error": "No verif_code provided"}, status=400)
+
+    qr = create_qr_and_save(verif_code)
 
     return Response({
         "id": qr.id,
-        "text": qr.text,
+        "verif_code": qr.verif_code,
         "image_url": qr.image.url
     })
 
@@ -56,8 +55,8 @@ def create_qr(request):
 @api_view(['GET'])
 def download_qr(request, qr_id):
     try:
-        qr = QRCode.objects.get(id=qr_id)
-    except QRCode.DoesNotExist:
+        qr = Appointment.objects.get(id=qr_id)
+    except Appointment.DoesNotExist:
         return Response({"error": "Not found"}, status=404)
 
     response = HttpResponse(qr.image.open(), content_type='image/png')

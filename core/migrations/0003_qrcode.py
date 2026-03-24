@@ -14,9 +14,9 @@ class Migration(migrations.Migration):
             name='QRCode',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.TextField(unique=True)),
+                ('verif_code', models.TextField(unique=True)),
                 ('image', models.ImageField(upload_to='qr_codes/')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
+              
             ],
         ),
     ]
