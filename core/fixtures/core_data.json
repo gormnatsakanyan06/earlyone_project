@@ -27,6 +27,15 @@
   }
 },
 {
+  "model": "core.qrcode",
+  "pk": 7,
+  "fields": {
+    "text": "5ef209d1-f388-4b4e-a0a4-5b51a604a86b",
+    "image": "qr_codes/2cdd4320-062d-4a0f-a616-e3266ace169f.png",
+    "created_at": "2026-03-26T10:49:58.262Z"
+  }
+},
+{
   "model": "core.service",
   "pk": 1,
   "fields": {
@@ -296,6 +305,42 @@
     "notes": null,
     "verification_code": "29dbfa86-dfc4-4e66-a7ce-639e5ed2f89f",
     "qr_code": 6
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 2,
+  "fields": {
+    "full_name": "John Doe2",
+    "phone_number": "12345678",
+    "email": null,
+    "category": "finance",
+    "content_type": 8,
+    "object_id": 1,
+    "scheduled_at": "2026-06-30T14:00:00Z",
+    "created_at": "2026-03-26T10:47:13.361Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "fe7168a1-5ec7-40c2-ba4c-3a64b8e50dc6",
+    "qr_code": null
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 3,
+  "fields": {
+    "full_name": "John Doe2",
+    "phone_number": "12345678",
+    "email": null,
+    "category": "finance",
+    "content_type": 8,
+    "object_id": 1,
+    "scheduled_at": "2026-06-30T14:00:00Z",
+    "created_at": "2026-03-26T10:49:58.068Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "5ef209d1-f388-4b4e-a0a4-5b51a604a86b",
+    "qr_code": 7
   }
 }
 ]
