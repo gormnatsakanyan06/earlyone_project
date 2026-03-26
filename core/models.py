@@ -1,6 +1,8 @@
 from django.db import models
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
 from smart_selects.db_fields import ChainedForeignKey
-
+import uuid
 
 
 
@@ -270,6 +272,7 @@ class BankAction(models.Model):
         return f"{self.bank.get_bank_display()} | {self.branch.address} | {self.get_bankaction_display()}"
 
 
+<<<<<<< HEAD
 class Appointment(models.Model):
     chosen = models.CharField(max_length=255,null=True)
     gmail = models.EmailField(max_length=255,null=True)
@@ -278,6 +281,9 @@ class Appointment(models.Model):
 
     def __str__(self):
         return self.verif_code
+=======
+# contacts
+>>>>>>> fc3a20c (feat: appointment system with QR generation and fixtures)
 
 class Contact(models.Model):
     types= [("Customer", "Հաճախորդ"),
@@ -296,6 +302,50 @@ class Contact(models.Model):
 
 
 
+<<<<<<< HEAD
 
 
     
+=======
+class Appointment(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('confirmed', 'Confirmed'),
+        ('cancelled', 'Cancelled'),
+        ('completed', 'Completed'),
+    ]
+
+    CATEGORY_CHOICES = [
+        ('finance', 'Ֆինանսներ'),
+        ('government', 'Պետական'),
+        ('telecom', 'Տելեկոմ'),
+        ('utility', 'Կոմունալ'),
+    ]
+
+    full_name = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20)
+    email = models.EmailField(null=True, blank=True)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+
+    # Generic relation
+    content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    object_id = models.PositiveIntegerField()
+    service_action = GenericForeignKey('content_type', 'object_id')
+
+    scheduled_at = models.DateTimeField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')
+    notes = models.TextField(null=True, blank=True)
+
+    #qri masna
+    verification_code = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    qr_code = models.OneToOneField("QRCode", on_delete=models.SET_NULL, null=True, blank=True)
+
+    def __str__(self):
+        return f"{self.full_name} - {self.category}"
+
+
+
+
+>>>>>>> fc3a20c (feat: appointment system with QR generation and fixtures)

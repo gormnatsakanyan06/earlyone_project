@@ -11,30 +11,52 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 
-def generate_qr_base64(data):
-    qr = qrcode.make(data)
+from .qr import create_qr_and_save
 
-    buffer = BytesIO()
-    qr.save(buffer, format="PNG")
+@api_view(['POST'])
+def create_appointment(request):
+    full_name = request.data.get('full_name')
+    phone = request.data.get('phone')
+    category = request.data.get('category')
+    action_id = request.data.get('action_id')
+    scheduled_time = request.data.get('scheduled_time')
 
-    img_bytes = buffer.getvalue()
-    base64_str = base64.b64encode(img_bytes).decode()
+    model_map = {
+        'finance': BankAction,
+        'government': GovernmentAction,
+        'telecom': TelecomAction,
+        'utility': ServiceAction,
+    }
 
-    return base64_str
+    selected_model = model_map.get(category)
 
+    if not selected_model:
+        return Response({"error": "Invalid category"}, status=400)
 
+    content_type = ContentType.objects.get_for_model(selected_model)
 
-@api_view(['GET', 'POST'])
-def create_qr(request):
-    data = request.data.get("text") or request.GET.get("text")
+    # ✅ 1. Create appointment FIRST
+    appointment = Appointment.objects.create(
+        full_name=full_name,
+        phone_number=phone,
+        category=category,
+        content_type=content_type,
+        object_id=action_id,
+        scheduled_at=scheduled_time
+    )
 
-    if not data:
-        return Response({"error": "No text provided"}, status=400)
+    # ✅ 2. Generate QR from verification code
+    qr = create_qr_and_save(str(appointment.verification_code))
 
-    qr_base64 = generate_qr_base64(data)
+    # ✅ 3. Attach QR to appointment
+    appointment.qr_code = qr
+    appointment.save()
 
+    # ✅ 4. Return response
     return Response({
-        "qr_code": qr_base64
+        "appointment_id": appointment.id,
+        "verification_code": str(appointment.verification_code),
+        "qr_image": qr.image.url
     })
 
 #QR

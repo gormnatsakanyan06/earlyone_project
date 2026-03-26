@@ -32,9 +32,12 @@ urlpatterns = [
     path('government/branches/', government_branches),
     path('government/actions/', government_actions),
 
-    # ✅ QR
+    #  QR
     path('qr/', create_qr),
     path('qr/<int:qr_id>/download/', download_qr),
+    # core/urls.py
+
+    path('book-appointment/',create_appointment, name='create_appointment'),
 ]
 
 # ✅ IMPORTANT: use += NOT =
