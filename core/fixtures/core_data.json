@@ -1,346 +1,283 @@
 [
 {
-  "model": "core.qrcode",
-  "pk": 3,
-  "fields": {
-    "text": "barevvvv",
-    "image": "qr_codes/81ea88ee-ce8e-4230-bd93-d927af28d422.png",
-    "created_at": "2026-03-17T16:10:42.935Z"
-  }
+    "model": "core.qrcode",
+    "pk": 1,
+    "fields": {
+        "text": "2c4d007f-1ac5-4841-9965-ab2276e2bba4",
+        "image": "qr_codes/33e57d35-9467-4718-b920-cf2e6fdda691.png",
+        "created_at": "2026-03-26T14:48:14.853Z"
+    }
 },
 {
-  "model": "core.qrcode",
-  "pk": 5,
-  "fields": {
-    "text": "hajoxxx",
-    "image": "qr_codes/8da8c763-db47-42b8-abb0-5ab0de429660.png",
-    "created_at": "2026-03-17T16:15:42.652Z"
-  }
+    "model": "core.service",
+    "pk": 1,
+    "fields": {
+        "name": null,
+        "type": "water"
+    }
 },
 {
-  "model": "core.qrcode",
-  "pk": 6,
-  "fields": {
-    "text": "29dbfa86-dfc4-4e66-a7ce-639e5ed2f89f",
-    "image": "qr_codes/16688a52-4074-45b3-8549-ffeba2271412.png",
-    "created_at": "2026-03-26T10:06:29.883Z"
-  }
+    "model": "core.service",
+    "pk": 2,
+    "fields": {
+        "name": null,
+        "type": "energy"
+    }
 },
 {
-  "model": "core.qrcode",
-  "pk": 7,
-  "fields": {
-    "text": "5ef209d1-f388-4b4e-a0a4-5b51a604a86b",
-    "image": "qr_codes/2cdd4320-062d-4a0f-a616-e3266ace169f.png",
-    "created_at": "2026-03-26T10:49:58.262Z"
-  }
+    "model": "core.service",
+    "pk": 3,
+    "fields": {
+        "name": null,
+        "type": "gas"
+    }
 },
 {
-  "model": "core.service",
-  "pk": 1,
-  "fields": {
-    "name": null,
-    "type": "water"
-  }
+    "model": "core.servicebranch",
+    "pk": 2,
+    "fields": {
+        "service": 1,
+        "name": "Veolia",
+        "city": "Երևան",
+        "branchCode": 1101,
+        "address": "Ֆուչիկի փող. 8",
+        "phone": "+37422222222"
+    }
 },
 {
-  "model": "core.service",
-  "pk": 2,
-  "fields": {
-    "name": null,
-    "type": "energy"
-  }
+    "model": "core.servicebranch",
+    "pk": 3,
+    "fields": {
+        "service": 1,
+        "name": "Veolia",
+        "city": "Երևան",
+        "branchCode": 1203,
+        "address": "Մազմանյան փող․",
+        "phone": "+37416161616"
+    }
 },
 {
-  "model": "core.service",
-  "pk": 3,
-  "fields": {
-    "name": null,
-    "type": "gas"
-  }
+    "model": "core.serviceaction",
+    "pk": 2,
+    "fields": {
+        "actiontype": "Jrachapi poxarinum",
+        "service": 1,
+        "branch": 2,
+        "scheduled_time": "2026-03-27T15:10:00Z"
+    }
 },
 {
-  "model": "core.servicebranch",
-  "pk": 2,
-  "fields": {
-    "service": 1,
-    "name": "Veolia",
-    "city": "Երևան",
-    "branchCode": 1101,
-    "address": "Ֆուչիկի փող. 8",
-    "phone": "+37422222222"
-  }
+    "model": "core.serviceaction",
+    "pk": 3,
+    "fields": {
+        "actiontype": "Jrachapi poxarinum",
+        "service": 1,
+        "branch": 3,
+        "scheduled_time": "2026-03-28T14:30:00Z"
+    }
 },
 {
-  "model": "core.servicebranch",
-  "pk": 3,
-  "fields": {
-    "service": 1,
-    "name": "Veolia",
-    "city": "Երևան",
-    "branchCode": 1203,
-    "address": "Մազմանյան փող․",
-    "phone": "+37416161616"
-  }
+    "model": "core.telecom",
+    "pk": 1,
+    "fields": {
+        "telecom": "viva"
+    }
 },
 {
-  "model": "core.serviceaction",
-  "pk": 2,
-  "fields": {
-    "actiontype": "Jrachapi poxarinum",
-    "service": 1,
-    "branch": 2,
-    "scheduled_time": "2026-03-27T15:10:00Z"
-  }
+    "model": "core.telecom",
+    "pk": 2,
+    "fields": {
+        "telecom": "team"
+    }
 },
 {
-  "model": "core.serviceaction",
-  "pk": 3,
-  "fields": {
-    "actiontype": "Jrachapi poxarinum",
-    "service": 1,
-    "branch": 3,
-    "scheduled_time": "2026-03-28T14:30:00Z"
-  }
+    "model": "core.telecom",
+    "pk": 3,
+    "fields": {
+        "telecom": "ucom"
+    }
 },
 {
-  "model": "core.telecom",
-  "pk": 1,
-  "fields": {
-    "telecom": "viva"
-  }
+    "model": "core.telecombranch",
+    "pk": 1,
+    "fields": {
+        "telecom": 1,
+        "city": "Երևան",
+        "address": "Դալմա",
+        "branchCode": "4534",
+        "phone": "+37444444444"
+    }
 },
 {
-  "model": "core.telecom",
-  "pk": 2,
-  "fields": {
-    "telecom": "team"
-  }
+    "model": "core.telecombranch",
+    "pk": 2,
+    "fields": {
+        "telecom": 1,
+        "city": "Yerevan",
+        "address": "hasce1",
+        "branchCode": "3212",
+        "phone": "+374 11 1111"
+    }
 },
 {
-  "model": "core.telecom",
-  "pk": 3,
-  "fields": {
-    "telecom": "ucom"
-  }
+    "model": "core.telecombranch",
+    "pk": 3,
+    "fields": {
+        "telecom": 2,
+        "city": "Yerevan",
+        "address": "hasce2",
+        "branchCode": "32133",
+        "phone": "+374 11 11114"
+    }
 },
 {
-  "model": "core.telecombranch",
-  "pk": 1,
-  "fields": {
-    "telecom": 1,
-    "city": "Երևան",
-    "address": "Դալմա",
-    "branchCode": "4534",
-    "phone": "+37444444444"
-  }
+    "model": "core.telecombranch",
+    "pk": 4,
+    "fields": {
+        "telecom": 3,
+        "city": "Yerevan",
+        "address": "hasce3",
+        "branchCode": "321331",
+        "phone": "54353434545"
+    }
 },
 {
-  "model": "core.telecombranch",
-  "pk": 2,
-  "fields": {
-    "telecom": 1,
-    "city": "Yerevan",
-    "address": "hasce1",
-    "branchCode": "3212",
-    "phone": "+374 11 1111"
-  }
+    "model": "core.telecomaction",
+    "pk": 1,
+    "fields": {
+        "telecomaction": "bajanord",
+        "telecom": 1,
+        "branch": 1,
+        "scheduled_time": "2026-04-07T13:35:00Z"
+    }
 },
 {
-  "model": "core.telecombranch",
-  "pk": 3,
-  "fields": {
-    "telecom": 2,
-    "city": "Yerevan",
-    "address": "hasce2",
-    "branchCode": "32133",
-    "phone": "+374 11 11114"
-  }
+    "model": "core.government",
+    "pk": 1,
+    "fields": {
+        "government": "ngn"
+    }
 },
 {
-  "model": "core.telecombranch",
-  "pk": 4,
-  "fields": {
-    "telecom": 3,
-    "city": "Yerevan",
-    "address": "hasce3",
-    "branchCode": "321331",
-    "phone": "54353434545"
-  }
+    "model": "core.governmentbranch",
+    "pk": 1,
+    "fields": {
+        "government": 1,
+        "city": "Երևան",
+        "address": "Գաջեգործների փող․ 76 շենք",
+        "branchCode": "1237",
+        "phone": "+37412345678"
+    }
 },
 {
-  "model": "core.telecomaction",
-  "pk": 1,
-  "fields": {
-    "telecomaction": "bajanord",
-    "telecom": 1,
-    "branch": 1,
-    "scheduled_time": "2026-04-07T13:35:00Z"
-  }
+    "model": "core.governmentaction",
+    "pk": 1,
+    "fields": {
+        "governmentaction": "gorcnakan",
+        "government": 1,
+        "branch": 1,
+        "scheduled_time": "2026-03-27T14:30:00Z"
+    }
 },
 {
-  "model": "core.government",
-  "pk": 1,
-  "fields": {
-    "government": "ngn"
-  }
+    "model": "core.bank",
+    "pk": 1,
+    "fields": {
+        "bank": "ameria"
+    }
 },
 {
-  "model": "core.governmentbranch",
-  "pk": 1,
-  "fields": {
-    "government": 1,
-    "city": "Երևան",
-    "address": "Գաջեգործների փող․ 76 շենք",
-    "branchCode": "1237",
-    "phone": "+37412345678"
-  }
+    "model": "core.bank",
+    "pk": 2,
+    "fields": {
+        "bank": "evoca"
+    }
 },
 {
-  "model": "core.governmentaction",
-  "pk": 1,
-  "fields": {
-    "governmentaction": "gorcnakan",
-    "government": 1,
-    "branch": 1,
-    "scheduled_time": "2026-03-27T14:30:00Z"
-  }
+    "model": "core.bank",
+    "pk": 3,
+    "fields": {
+        "bank": "ineco"
+    }
 },
 {
-  "model": "core.bank",
-  "pk": 1,
-  "fields": {
-    "bank": "ameria"
-  }
+    "model": "core.bank",
+    "pk": 4,
+    "fields": {
+        "bank": "akba"
+    }
 },
 {
-  "model": "core.bank",
-  "pk": 2,
-  "fields": {
-    "bank": "evoca"
-  }
+    "model": "core.bankbranch",
+    "pk": 2,
+    "fields": {
+        "bank": 2,
+        "city": "Երևան",
+        "address": "Թումանյան 15",
+        "branchCode": "0002",
+        "phone": "+37422222222"
+    }
 },
 {
-  "model": "core.bank",
-  "pk": 3,
-  "fields": {
-    "bank": "ineco"
-  }
+    "model": "core.bankbranch",
+    "pk": 3,
+    "fields": {
+        "bank": 1,
+        "city": "Երևան",
+        "address": "Մոսկովյան պող․ 48, 2/1",
+        "branchCode": "0011",
+        "phone": "+37401010101"
+    }
 },
 {
-  "model": "core.bank",
-  "pk": 4,
-  "fields": {
-    "bank": "akba"
-  }
+    "model": "core.bankbranch",
+    "pk": 4,
+    "fields": {
+        "bank": 1,
+        "city": "Երևան",
+        "address": "Մաշտոցի պող․ 20/4",
+        "branchCode": "0065",
+        "phone": "+37455555555"
+    }
 },
 {
-  "model": "core.bankbranch",
-  "pk": 2,
-  "fields": {
-    "bank": 2,
-    "city": "Երևան",
-    "address": "Թումանյան 15",
-    "branchCode": "0002",
-    "phone": "+37422222222"
-  }
+    "model": "core.bankaction",
+    "pk": 1,
+    "fields": {
+        "bankaction": "qart",
+        "bank": 1,
+        "branch": 3,
+        "scheduled_time": "2026-03-20T14:30:00Z"
+    }
 },
 {
-  "model": "core.bankbranch",
-  "pk": 3,
-  "fields": {
-    "bank": 1,
-    "city": "Երևան",
-    "address": "Մոսկովյան պող․ 48, 2/1",
-    "branchCode": "0011",
-    "phone": "+37401010101"
-  }
+    "model": "core.contact",
+    "pk": 1,
+    "fields": {
+        "type": "Customer",
+        "name": "aaaa",
+        "email": "sadasda2",
+        "phone": "+374 11 1111",
+        "message": "sadsdasda",
+        "company": "asdads"
+    }
 },
 {
-  "model": "core.bankbranch",
-  "pk": 4,
-  "fields": {
-    "bank": 1,
-    "city": "Երևան",
-    "address": "Մաշտոցի պող․ 20/4",
-    "branchCode": "0065",
-    "phone": "+37455555555"
-  }
-},
-{
-  "model": "core.bankaction",
-  "pk": 1,
-  "fields": {
-    "bankaction": "qart",
-    "bank": 1,
-    "branch": 3,
-    "scheduled_time": "2026-03-20T14:30:00Z"
-  }
-},
-{
-  "model": "core.contact",
-  "pk": 1,
-  "fields": {
-    "type": "Customer",
-    "name": "aaaa",
-    "email": "sadasda2",
-    "phone": "+374 11 1111",
-    "message": "sadsdasda",
-    "company": "asdads"
-  }
-},
-{
-  "model": "core.appointment",
-  "pk": 1,
-  "fields": {
-    "full_name": "John Doe",
-    "phone_number": "12345678",
-    "email": null,
-    "category": "finance",
-    "content_type": 8,
-    "object_id": 1,
-    "scheduled_at": "2026-03-30T14:00:00Z",
-    "created_at": "2026-03-26T10:06:29.658Z",
-    "status": "pending",
-    "notes": null,
-    "verification_code": "29dbfa86-dfc4-4e66-a7ce-639e5ed2f89f",
-    "qr_code": 6
-  }
-},
-{
-  "model": "core.appointment",
-  "pk": 2,
-  "fields": {
-    "full_name": "John Doe2",
-    "phone_number": "12345678",
-    "email": null,
-    "category": "finance",
-    "content_type": 8,
-    "object_id": 1,
-    "scheduled_at": "2026-06-30T14:00:00Z",
-    "created_at": "2026-03-26T10:47:13.361Z",
-    "status": "pending",
-    "notes": null,
-    "verification_code": "fe7168a1-5ec7-40c2-ba4c-3a64b8e50dc6",
-    "qr_code": null
-  }
-},
-{
-  "model": "core.appointment",
-  "pk": 3,
-  "fields": {
-    "full_name": "John Doe2",
-    "phone_number": "12345678",
-    "email": null,
-    "category": "finance",
-    "content_type": 8,
-    "object_id": 1,
-    "scheduled_at": "2026-06-30T14:00:00Z",
-    "created_at": "2026-03-26T10:49:58.068Z",
-    "status": "pending",
-    "notes": null,
-    "verification_code": "5ef209d1-f388-4b4e-a0a4-5b51a604a86b",
-    "qr_code": 7
-  }
+    "model": "core.appointment",
+    "pk": 4,
+    "fields": {
+        "full_name": "Gor",
+        "phone_number": "88888888",
+        "email": null,
+        "category": "telecom",
+        "content_type": 20,
+        "object_id": 5,
+        "scheduled_at": "2026-06-29T14:00:00Z",
+        "created_at": "2026-03-26T14:48:07.053Z",
+        "status": "pending",
+        "notes": null,
+        "verification_code": "2c4d007f-1ac5-4841-9965-ab2276e2bba4",
+        "qr_code": 1
+    }
 }
 ]
