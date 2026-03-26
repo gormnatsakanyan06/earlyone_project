@@ -3,9 +3,7 @@ from .models import (
     Service, ServiceBranch, ServiceAction,
     Telecom, TelecomBranch, TelecomAction,
     Government, GovernmentBranch, GovernmentAction,
-
     Bank, BankBranch, BankAction,QRCode,Contact,Appointment
-
 )
 from django.utils.html import format_html
 # Register all models
@@ -29,18 +27,16 @@ admin.site.register(BankAction)
 admin.site.register(Contact)
 admin.site.register(Appointment)
 
-admin.site.register(Appointment)
-admin.site.register(Contact)        
+@admin.register(QRCode)
+class QRCodeAdmin(admin.ModelAdmin):
+    list_display = ('id', 'text', 'qr_preview', 'created_at')
 
-# class QRCodeAdmin(admin.ModelAdmin):
-   
+    def qr_preview(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" width="100" height="100" />',
+                obj.image.url
+            )
+        return "No Image"
 
-#     def qr_preview(self, obj):
-#         if obj.image:
-#             return format_html(
-#                 '<img src="{}" width="100" height="100" />',
-#                 obj.image.url
-#             )
-#         return "No Image"
-
-#     qr_preview.short_description = "Appointment Appointment"
+    qr_preview.short_description = "QR Code"

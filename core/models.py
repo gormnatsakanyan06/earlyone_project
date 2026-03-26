@@ -5,6 +5,13 @@ from smart_selects.db_fields import ChainedForeignKey
 import uuid
 
 
+class QRCode(models.Model):
+    text = models.TextField(unique=True)  
+    image = models.ImageField(upload_to='qr_codes/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.text
 
 # Service
 
@@ -15,11 +22,13 @@ class Service(models.Model):
         ("gas", "Գազի սպասարկում")
     ]
 
+    # ADD THIS LINE:
     name = models.CharField(max_length=100, null=True, blank=True)
     
     type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True)
 
     def __str__(self):
+        # Now this will work!
         return self.name if self.name else self.get_type_display()
 
 
@@ -272,18 +281,7 @@ class BankAction(models.Model):
         return f"{self.bank.get_bank_display()} | {self.branch.address} | {self.get_bankaction_display()}"
 
 
-<<<<<<< HEAD
-class Appointment(models.Model):
-    chosen = models.CharField(max_length=255,null=True)
-    gmail = models.EmailField(max_length=255,null=True)
-    verif_code = models.CharField(max_length=20,null=True)   
-    image = models.ImageField(upload_to='qr_codes/',null=True)
-
-    def __str__(self):
-        return self.verif_code
-=======
 # contacts
->>>>>>> fc3a20c (feat: appointment system with QR generation and fixtures)
 
 class Contact(models.Model):
     types= [("Customer", "Հաճախորդ"),
@@ -302,11 +300,6 @@ class Contact(models.Model):
 
 
 
-<<<<<<< HEAD
-
-
-    
-=======
 class Appointment(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -348,4 +341,3 @@ class Appointment(models.Model):
 
 
 
->>>>>>> fc3a20c (feat: appointment system with QR generation and fixtures)

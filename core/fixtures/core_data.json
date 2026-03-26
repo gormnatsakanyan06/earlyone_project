@@ -1,6 +1,5 @@
 [
 {
-
   "model": "core.qrcode",
   "pk": 3,
   "fields": {
@@ -17,7 +16,6 @@
     "image": "qr_codes/8da8c763-db47-42b8-abb0-5ab0de429660.png",
     "created_at": "2026-03-17T16:15:42.652Z"
   }
-
 },
 {
   "model": "core.qrcode",
@@ -239,7 +237,6 @@
   }
 },
 {
-
   "model": "core.bankbranch",
   "pk": 3,
   "fields": {
@@ -269,7 +266,6 @@
     "bank": 1,
     "branch": 3,
     "scheduled_time": "2026-03-20T14:30:00Z"
-
   }
 },
 {
@@ -277,7 +273,6 @@
   "pk": 1,
   "fields": {
     "type": "Customer",
-
     "name": "aaaa",
     "email": "sadasda2",
     "phone": "+374 11 1111",
@@ -302,6 +297,5 @@
     "verification_code": "29dbfa86-dfc4-4e66-a7ce-639e5ed2f89f",
     "qr_code": 6
   }
-
 }
 ]
