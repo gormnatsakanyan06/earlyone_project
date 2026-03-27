@@ -1,5 +1,6 @@
 from django.http import JsonResponse ,HttpResponse
 from .models import *
+from django.shortcuts import render
 
 
 #QR
@@ -34,8 +35,6 @@ def create_appointment(request):
         return Response({"error": "Invalid category"}, status=400)
 
     content_type = ContentType.objects.get_for_model(selected_model)
-
-    # ✅ 1. Create appointment FIRST
     appointment = Appointment.objects.create(
         full_name=full_name,
         phone_number=phone,
@@ -45,14 +44,10 @@ def create_appointment(request):
         scheduled_at=scheduled_time
     )
 
-    # ✅ 2. Generate QR from verification code
     qr = create_qr_and_save(str(appointment.verification_code))
-
-    # ✅ 3. Attach QR to appointment
     appointment.qr_code = qr
     appointment.save()
 
-    # ✅ 4. Return response
     return Response({
         "appointment_id": appointment.id,
         "verification_code": str(appointment.verification_code),
@@ -147,5 +142,13 @@ def home(request):
 
 # Create your views here.
 
+def appointment(request):
+    return render(request, "core/appointment.html")
 
+def finance(request):
+    return render(request, 'core/finance.html')
+
+
+def government(request):
+    return render(request, 'core/government.html')
 

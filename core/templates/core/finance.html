@@ -1,0 +1,158 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance</title>
+  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: #ffffff; 
+      margin: 0;
+      scrollbar-width: none; 
+    }
+    body::-webkit-scrollbar { display: none; }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .category-btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .category-btn:hover {
+      transform: translateX(8px);
+      border-color: #2B90D2;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="py-24 px-6" style="background-color: #0f172a;">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center text-white mb-20">
+        Maximize Efficiency with a Multi-Level Solution
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="text-left group">
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-blue-500/20 transition-colors">
+            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Smart Queuing</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Prevent crowded service desks with intelligent ticketing algorithms.</p>
+        </div>
+
+        <div class="text-left group">
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-teal-500/20 transition-colors">
+            <svg class="w-7 h-7 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Web Dashboard</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">User-friendly interface for real-time staff activity tracking.</p>
+        </div>
+
+        <div class="text-left group">
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-purple-500/20 transition-colors">
+            <svg class="w-7 h-7 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">BI Tools</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Instantly generate reports—weekly, monthly, or on demand.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50 border-y border-slate-100">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-10">
+        <p class="text-slate-400 font-bold uppercase tracking-widest text-sm">Trusted by</p>
+      </div>
+      
+      <div class="flex flex-wrap items-center justify-center gap-12 md:gap-24 opacity-60 grayscale hover:grayscale-0 transition-all">
+        <img src="{% static 'images/ameria.png' %}" class="h-16 w-auto" alt="Ameria">
+        <img src="{% static 'images/ineco.png' %}" class="h-16 w-auto" alt="Ineco">
+        <img src="{% static 'images/acba.png' %}" class="h-16 w-auto" alt="Acba">
+        <img src="{% static 'images/evoca.png' %}" class="h-16 w-auto" alt="Evoca">
+      </div>
+
+      <div class="mt-24 text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight">
+          Key Benefits of a Customer Flow <br class="hidden md:block"> Management System
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <main class="min-h-screen flex items-center justify-center p-4 py-24" style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
+    <div class="relative w-full max-w-lg">
+      <div class="glass-effect rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-8 relative">
+        
+        <div class="relative z-10">
+          <div class="mb-8 flex items-center justify-between">
+              <div>
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">Ֆինանսներ</h2>
+                <p class="text-slate-500 text-xs font-medium mt-1">Ընտրեք բանկը շարունակելու համար</p>
+              </div>
+              <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+                <img src="{% static 'images/loggo.png' %}" alt="logo" class="h-6 w-auto">
+              </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4">
+            <a href="ameria_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2">
+                  <img src="{% static 'images/ameria.png' %}" alt="Ameria" class="w-full h-full object-contain">
+                </div>
+                <span class="text-slate-800 font-bold text-lg">Ամերիա</span>
+              </div>
+              <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+
+            <a href="ineco_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2">
+                  <img  src="{% static 'images/ineco.png' %}" alt="Ineco" class="w-full h-full object-contain">
+                </div>
+                <span class="text-slate-800 font-bold text-lg">Ինեկո</span>
+              </div>
+              <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+
+            <a href="acba_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+              <div class="flex items-center space-x-4">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2">
+                  <img  src="{% static 'images/acba.png' %}" alt="Acba" class="w-full h-full object-contain">
+                </div>
+                <span class="text-slate-800 font-bold text-lg">Ակբա</span>
+              </div>
+              <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+
+            <a href="evoca_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+                <div class="flex items-center space-x-4">
+                  <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2">
+                    <img src="{% static 'images/evoca.png' %}" alt="Evoca" class="w-full h-full object-contain">
+                  </div>
+                  <span class="text-slate-800 font-bold text-lg">Էվոկա</span>
+                </div>
+                <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+
+          <div class="mt-10 text-center">
+              <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">Earlyone © 2026</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

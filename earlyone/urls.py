@@ -38,6 +38,7 @@ urlpatterns = [
     # core/urls.py
 
     path('book-appointment/',create_appointment, name='create_appointment'),
+    path('', include('core.urls')),
 ]
 
 # ✅ IMPORTANT: use += NOT =
