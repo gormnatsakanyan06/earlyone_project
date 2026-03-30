@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Digital Ticket - Earlyone</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #0a0f1a;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .ticket-card {
+      background: white;
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ticket "Cut-out" dots on the sides */
+    .ticket-card::before, .ticket-card::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #0a0f1a;
+      border-radius: 50%;
+      top: 70%;
+      transform: translateY(-50%);
+    }
+    .ticket-card::before { left: -15px; }
+    .ticket-card::after { right: -15px; }
+
+    .dash-line {
+      border-top: 2px dashed #f1f5f9;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px]"></div>
+
+  <div class="relative w-full max-w-sm mx-auto p-6">
+    <div class="ticket-card shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+      
+      <div class="p-8 text-center">
+        <div class="inline-flex p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
+          <img src="{% static 'images/'|add:logo %}" alt="Bank Logo" class="h-8 w-auto">
+        </div>
+        <h1 class="text-xl font-bold text-slate-900">{{ name }}</h1>
+        <p class="text-slate-500 text-sm font-medium">{{ branch_name }}</p>
+      </div>
+
+      <div class="px-8 pb-8 text-center">
+        <div class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-6 mb-4">
+          <div class="w-48 h-48 mx-auto bg-white rounded-xl shadow-sm flex items-center justify-center border border-slate-100">
+             <svg class="w-40 h-40 text-slate-800" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M3 3h8v8H3V3zm2 2v4h4V5H5zm8-2h8v8h-8V3zm2 2v4h4V5h-4zM3 13h8v8H3v-8zm2 2v4h4v-4H5zm13-2h3v2h-3v-2zm-3 0h2v3h-2v-3zm3 3h3v2h-3v-2zm-3 2h2v3h-2v-3zm3 3h3v2h-3v-2zm-3-1h1v1h-1v-1zm1-1h1v1h-1v-1zm2-2h1v1h-1v-1zm-1-1h1v1h-1v-1zm-2-2h1v1h-1v-1z"/>
+             </svg>
+          </div>
+        </div>
+        <div class="text-3xl font-black tracking-widest text-blue-600 mb-1">{{ ticket_number }}</div>
+        <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Ձեր հերթի համարը</p>
+      </div>
+
+      <div class="px-4 flex items-center">
+        <div class="dash-line"></div>
+      </div>
+
+      <div class="p-8 space-y-4">
+        <div class="flex justify-between">
+          <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Ծառայություն</span>
+          <span class="text-slate-900 text-sm font-bold capitalize">{{ service }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Ամսաթիվ</span>
+          <span class="text-slate-900 text-sm font-bold">{{ date }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400 text-xs font-bold uppercase tracking-wider">Ժամ</span>
+          <span class="text-slate-900 text-sm font-bold">{{ time }}</span>
+        </div>
+      </div>
+
+    </div>
+    
+    <div class="mt-6 text-center">
+      <p class="text-slate-500 text-xs font-medium italic">Շնորհակալություն Earlyone-ից օգտվելու համար</p>
+    </div>
+  </div>
+
+</body>
+</html>

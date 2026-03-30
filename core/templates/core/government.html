@@ -105,35 +105,35 @@ Management System <br class="hidden md:block">
           </div>
 
           <div class="grid grid-cols-1 gap-4">
-            <a href="ngn_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
-                  <img src="{% static 'images/ngn.png' %}" alt="Police" class="w-full h-full object-contain">
-                </div>
-                <span class="text-slate-800 font-bold text-lg leading-tight">Հաշվառման-քննական ստորաբաժանումներ</span>
-              </div>
-              <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-            </a>
+            <a href="{% url 'government_branches' 'ngn' %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+  <div class="flex items-center space-x-4">
+    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
+      <img src="{% static 'images/ngn.png' %}" alt="Police" class="w-full h-full object-contain">
+    </div>
+    <span class="text-slate-800 font-bold text-lg leading-tight">Հաշվառման-քննական ստորաբաժանումներ</span>
+  </div>
+  <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+</a>
 
-            <a href="arxiv_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
-                  <img src="{% static 'images/arxiv.png' %}" alt="Archive" class="w-full h-full object-contain">
-                </div>
-                <span class="text-slate-800 font-bold text-lg">Ազգային արխիվ</span>
-              </div>
-              <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-            </a>
+<a href="{% url 'government_branches' 'arxiv' %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+  <div class="flex items-center space-x-4">
+    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
+      <img src="{% static 'images/arxiv.png' %}" alt="Archive" class="w-full h-full object-contain">
+    </div>
+    <span class="text-slate-800 font-bold text-lg">Ազգային արխիվ</span>
+  </div>
+  <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+</a>
 
-            <a href="kadastr_branches.html" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
-              <div class="flex items-center space-x-4">
-                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
-                  <img src="{% static 'images/kadastr.png' %}" alt="Cadastre" class="w-full h-full object-contain">
-                </div>
-                <span class="text-slate-800 font-bold text-lg">Կադաստրի կոմիտե</span>
-              </div>
-              <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
-            </a>
+<a href="{% url 'government_branches' 'kadastr' %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+  <div class="flex items-center space-x-4">
+    <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
+      <img src="{% static 'images/kadastr.png' %}" alt="Cadastre" class="w-full h-full object-contain">
+    </div>
+    <span class="text-slate-800 font-bold text-lg">Կադաստրի կոմիտե</span>
+  </div>
+  <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+</a>
           </div>
 
           <div class="mt-10 text-center">
