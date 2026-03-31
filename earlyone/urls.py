@@ -36,7 +36,7 @@ urlpatterns = [
     path('qr/', create_qr),
     path('qr/<int:qr_id>/download/', download_qr),
     # core/urls.py
-
+    path('appointment', appointment),
     path('book-appointment/',create_appointment, name='create_appointment'),
     path('', include('core.urls')),
 ]

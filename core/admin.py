@@ -3,7 +3,7 @@ from .models import (
     Service, ServiceBranch, ServiceAction,
     Telecom, TelecomBranch, TelecomAction,
     Government, GovernmentBranch, GovernmentAction,
-    Bank, BankBranch, BankAction,QRCode,Contact,Appointment
+    Bank, BankBranch, BankAction,QRCode,Contact,Appointment, Category
 )
 from django.utils.html import format_html
 # Register all models
@@ -26,6 +26,8 @@ admin.site.register(BankAction)
 
 admin.site.register(Contact)
 admin.site.register(Appointment)
+
+admin.site.register(Category)
 
 @admin.register(QRCode)
 class QRCodeAdmin(admin.ModelAdmin):

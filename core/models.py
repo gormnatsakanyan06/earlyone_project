@@ -7,7 +7,7 @@ import uuid
 
 class QRCode(models.Model):
     text = models.TextField(unique=True)  
-    image = models.ImageField(upload_to='qr_codes/')
+    image = models.ImageField(upload_to='media/qr_codes/')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -26,6 +26,7 @@ class Service(models.Model):
     name = models.CharField(max_length=100, null=True, blank=True)
     
     type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True)
+    image = models.ImageField(upload_to='media/qr_codes/', null=True, blank=True)
 
     def __str__(self):
         # Now this will work!
@@ -98,6 +99,9 @@ class Telecom(models.Model):
         ("ucom", "Յուքոմ")
     ]
     telecom = models.CharField(max_length=30, choices=TELECOM_TYPES, unique=True)
+    image = models.ImageField(upload_to='media/telecom/', null=True, blank=True)
+
+
 
     def __str__(self):
         return self.get_telecom_display()
@@ -163,6 +167,9 @@ class Government(models.Model):
     ]
 
     government = models.CharField(max_length=20, choices=GOVERNMENT_TYPES, unique=True)
+    image = models.ImageField(upload_to='media/government/', null=True, blank=True)
+
+
 
     def __str__(self):
         return self.get_government_display()
@@ -227,6 +234,8 @@ class Bank(models.Model):
     ]
 
     bank = models.CharField(max_length=20, choices=BANK_TYPES, unique=True)
+    image = models.ImageField(upload_to='media/bank/', null=True, blank=True)
+
 
     def __str__(self):
         return self.get_bank_display()
@@ -299,7 +308,6 @@ class Contact(models.Model):
     
 
 
-
 class Appointment(models.Model):
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -319,6 +327,8 @@ class Appointment(models.Model):
     phone_number = models.CharField(max_length=20)
     email = models.EmailField(null=True, blank=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES)
+
+    #Hetaga anter nkarner
 
     # Generic relation
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
@@ -341,3 +351,23 @@ class Appointment(models.Model):
 
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True) # 'finance', 'government' ...
+    svg_path = models.TextField(help_text="Paste the 'd' attribute string here")
+
+    class Meta:
+        verbose_name_plural = "Categories"
+
+    def __clstr__(self):
+        return self.name
+
+class ServiceProvider(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='providers')
+    name = models.CharField(max_length=200)
+    description = models.TextField(blank=True)
+    images = models.ImageField(upload_to='media/', blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

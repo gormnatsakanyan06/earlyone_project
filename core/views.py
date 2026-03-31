@@ -1,7 +1,7 @@
 from django.http import JsonResponse ,HttpResponse
 from .models import *
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
+from .models import Category
 #QR
 import qrcode
 from io import BytesIO
@@ -133,7 +133,12 @@ def telecom_actions(request):
     actions = list(TelecomAction.objects.values())
     return JsonResponse(actions, safe=False)
 
-
+def category_detail(request, slug):
+    # This finds the specific category using the slug from the URL
+    category = get_object_or_404(Category, slug=slug)
+    
+    # For now, we'll just render a simple page or the same page with context
+    return render(request, 'category_detail.html', {'category': category})
 
 
 def home(request):
@@ -142,7 +147,8 @@ def home(request):
 # Create your views here.
 
 def appointment(request):
-    return render(request, "core/appointment.html")
+    categories = Category.objects.all()
+    return render(request, 'core/appointment.html', {'categories': categories})
 
 def finance(request):
     return render(request, 'core/finance.html')

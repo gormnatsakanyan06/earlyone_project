@@ -3,6 +3,7 @@ from .views import *
 
 urlpatterns = [
     path("appointment/", appointment, name="appointment"),
+    path('appointment/<slug:slug>/', category_detail, name='category_detail'),
 
     path('finance/', finance, name='finance'),
 
