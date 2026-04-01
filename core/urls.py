@@ -11,7 +11,7 @@ urlpatterns = [
 
     path('telecom/', telecom, name='telecom'),
 
-    path('utilitie/', utilitie, name='utilitie'),
+    path('utility/', utility, name='utility'),
 
     # --- Finance ---
 

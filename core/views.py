@@ -1,6 +1,6 @@
 from django.http import JsonResponse ,HttpResponse
 from .models import *
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Category
 #QR
 import qrcode
@@ -96,19 +96,19 @@ def service_actions(request):
 
 
 
-def government(request):
-    government = list(Government.objects.values())
-    return JsonResponse(government, safe=False)
+# def government(request):
+#     government = list(Government.objects.values())
+#     return JsonResponse(government, safe=False)
 
 
-def government_branches(request):
-    branches = list(GovernmentBranch.objects.values())
-    return JsonResponse(branches, safe=False)
+# def government_branches(request):
+#     branches = list(GovernmentBranch.objects.values())
+#     return JsonResponse(branches, safe=False)
 
 
-def government_actions(request):
-    actions = list(GovernmentAction.objects.values())
-    return JsonResponse(actions, safe=False)
+# def government_actions(request):
+#     actions = list(GovernmentAction.objects.values())
+#     return JsonResponse(actions, safe=False)
 
 
 
@@ -119,32 +119,37 @@ def government_actions(request):
 
 
 
-def telecom(request):
-    telecom = list(Telecom.objects.values())
-    return JsonResponse(telecom, safe=False)
+# def telecom(request):
+#     telecom = list(Telecom.objects.values())
+#     return JsonResponse(telecom, safe=False)
 
 
-def telecom_branches(request):
-    branches = list(TelecomBranch.objects.values())
-    return JsonResponse(branches, safe=False)
+# def telecom_branches(request):
+#     branches = list(TelecomBranch.objects.values())
+#     return JsonResponse(branches, safe=False)
 
 
-def telecom_actions(request):
-    actions = list(TelecomAction.objects.values())
-    return JsonResponse(actions, safe=False)
+# def telecom_actions(request):
+#     actions = list(TelecomAction.objects.values())
+#     return JsonResponse(actions, safe=False)
 
 def category_detail(request, slug):
-    # This finds the specific category using the slug from the URL
     category = get_object_or_404(Category, slug=slug)
-    
-    # For now, we'll just render a simple page or the same page with context
-    return render(request, 'category_detail.html', {'category': category})
+
+    slug_to_url = {
+        'finance': 'finance',
+        'government': 'government',
+        'telecom': 'telecom',
+        'utility': 'utility',
+    }
+
+    if slug in slug_to_url:
+        return redirect(slug_to_url[slug])
 
 
 def home(request):
     return HttpResponse("Earlyone server is running 🚀")
 
-# Create your views here.
 
 def appointment(request):
     categories = Category.objects.all()
@@ -160,8 +165,8 @@ def government(request):
 def telecom(request):
     return render(request, 'core/telecom.html')  
 
-def utilitie(request):
-    return render(request, 'core/utilitie.html')
+def utility(request):
+    return render(request, 'core/utility.html')
 
 
 BANK_DATA = {

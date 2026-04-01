@@ -13,7 +13,6 @@ class QRCode(models.Model):
     def __str__(self):
         return self.text
 
-# Service
 
 class Service(models.Model):
     SERVICE_TYPES = [
@@ -22,14 +21,12 @@ class Service(models.Model):
         ("gas", "Գազի սպասարկում")
     ]
 
-    # ADD THIS LINE:
     name = models.CharField(max_length=100, null=True, blank=True)
     
     type = models.CharField(max_length=20, choices=SERVICE_TYPES, unique=True)
-    image = models.ImageField(upload_to='media/qr_codes/', null=True, blank=True)
+    image = models.ImageField(upload_to='media/utility/', null=True, blank=True)
 
     def __str__(self):
-        # Now this will work!
         return self.name if self.name else self.get_type_display()
 
 
@@ -87,9 +84,6 @@ class ServiceAction(models.Model):
         action_display = self.get_actiontype_display()
         
         return f"{service_display} | {branch_display} | {action_display}"
-
-
-# Telecom
 
 
 class Telecom(models.Model):
@@ -156,8 +150,6 @@ class TelecomAction(models.Model):
         return f"{self.telecom.get_telecom_display()} | {self.branch.address} | {self.get_telecomaction_display()}"
 
 
-# Nerqin Gorceri Naxararutyun
-
 
 class Government(models.Model):
     GOVERNMENT_TYPES = [
@@ -222,8 +214,6 @@ class GovernmentAction(models.Model):
 
     scheduled_time = models.DateTimeField(null=True, blank=True)
 
-
-# Bank
 
 class Bank(models.Model):
     BANK_TYPES = [
@@ -290,8 +280,6 @@ class BankAction(models.Model):
         return f"{self.bank.get_bank_display()} | {self.branch.address} | {self.get_bankaction_display()}"
 
 
-# contacts
-
 class Contact(models.Model):
     types= [("Customer", "Հաճախորդ"),
            ("Partner", "Գործընկեր"),
@@ -353,13 +341,13 @@ class Appointment(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True) # 'finance', 'government' ...
+    slug = models.SlugField(unique=True)
     svg_path = models.TextField(help_text="Paste the 'd' attribute string here")
 
     class Meta:
         verbose_name_plural = "Categories"
 
-    def __clstr__(self):
+    def __str__(self):
         return self.name
 
 class ServiceProvider(models.Model):
