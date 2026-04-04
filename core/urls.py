@@ -1,57 +1,15 @@
 from django.urls import path
-from .views import *
+from . import views
 
 urlpatterns = [
-    path("appointment/", appointment, name="appointment"),
-    path('appointment/<slug:slug>/', category_detail, name='category_detail'),
-
-    path('finance/', finance, name='finance'),
-
-    path('government/', government, name='government'),
-
-    path('telecom/', telecom, name='telecom'),
-
-    path('utility/', utility, name='utility'),
-
-    # --- Finance ---
-
-    path('finance/<str:service_slug>/', bank_branches, name='branch_list'),
-    path('finance/<str:service_slug>/<str:branch_name>/', bank_actions, name='bank_actions'),
-    path('finance/<str:service_slug>/<str:branch_name>/<str:action_slug>/time/', 
-         datetime_selection, name='datetime_selection'),
-    path('finance/<str:service_slug>/<str:branch_name>/<str:action_slug>/<str:date>/<str:time>/ticket/', 
-         generate_ticket, name='generate_ticket'),
-
-
-    # --- Government  ---
-    path('government/<str:service_slug>/', government_branches, name='government_branches'),
-    path('government/<str:service_slug>/<str:branch_name>/actions/', 
-         government_actions, name='government_actions'),
-    path('government/<str:service_slug>/<str:branch_name>/<str:action_slug>/time/', 
-         datetime_selection, name='gov_datetime_selection'),
-    path('government/<str:service_slug>/<str:branch_name>/<str:action_slug>/<str:date>/<str:time>/ticket/', 
-         generate_ticket, name='gov_generate_ticket'),
-
-     # --- Telecom---
-    path('telecom/<str:service_slug>/', telecom_branches, name='telecom_branches'),
-    path('telecom/<str:service_slug>/<str:branch_name>/actions/', 
-         telecom_actions, name='telecom_actions'),
-    path('telecom/<str:service_slug>/<str:branch_name>/<str:action_slug>/time/', 
-         datetime_selection, name='telecom_datetime_selection'),
-    path('telecom/<str:service_slug>/<str:branch_name>/<str:action_slug>/<str:date>/<str:time>/ticket/', 
-         generate_ticket, name='telecom_generate_ticket'),  
-
-     # --- Utilities ---
-    path('utility/<str:service_slug>/', 
-         utility_branches, name='utility_branches'),
+    path('', views.category_detail_view, {'category_slug': 'finance'}, name='home'),
+   
+    # Sector Detail (e.g., /category/finance/)
+    path('category/<slug:category_slug>/', views.category_detail_view, name='category_detail'),
     
-    path('utility/<str:service_slug>/<str:branch_name>/actions/', 
-         utility_actions, name='utility_actions'),
+    # Provider Branches (e.g., /provider/ameria/)
+    path('provider/<slug:provider_slug>/', views.branch_list_view, name='branch_list'),
     
-    path('utility/<str:service_slug>/<str:branch_name>/<str:action_slug>/time/', 
-         datetime_selection, name='utility_datetime_selection'),
-    
-    path('utility/<str:service_slug>/<str:branch_name>/<str:action_slug>/<str:date>/<str:time>/ticket/', 
-         generate_ticket, name='utility_generate_ticket'),
-       
-  ]
+    # Branch Services/Actions (e.g., /provider/ameria/sayat-nova/actions/)
+    path('provider/<slug:provider_slug>/<slug:branch_slug>/actions/', views.action_list_view, name='action_list'),
+]

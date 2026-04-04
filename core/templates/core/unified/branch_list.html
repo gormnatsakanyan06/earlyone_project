@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+<h2 class="text-2xl font-extrabold">{{ provider.name }}</h2>
+{% for branch in branches %}
+<a href="{% url 'action_list' provider.slug branch.slug %}">
+    <span>{{ branch.name }}</span>
+</a>
+{% endfor %}

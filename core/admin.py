@@ -1,44 +1,48 @@
 from django.contrib import admin
-from .models import (
-    Service, ServiceBranch, ServiceAction,
-    Telecom, TelecomBranch, TelecomAction,
-    Government, GovernmentBranch, GovernmentAction,
-    Bank, BankBranch, BankAction,QRCode,Contact,Appointment, Category
-)
-from django.utils.html import format_html
-# Register all models
-admin.site.register(Service)
-admin.site.register(ServiceBranch)
-admin.site.register(ServiceAction)
+from .models import Category, Provider, Branch, Action, QRCode, Appointment
 
-admin.site.register(Telecom)
-admin.site.register(TelecomBranch)
-admin.site.register(TelecomAction)
+# This allows you to add Branches while editing a Provider
+class BranchInline(admin.TabularInline):
+    model = Branch
+    extra = 1 
+    prepopulated_fields = {"slug": ("name",)}
 
-admin.site.register(Government)
-admin.site.register(GovernmentBranch)
-admin.site.register(GovernmentAction)
+# This allows you to add Actions while editing a Provider
+class ActionInline(admin.TabularInline):
+    model = Action
+    extra = 1
+    prepopulated_fields = {"slug": ("name",)}
 
-admin.site.register(Bank)
-admin.site.register(BankBranch)
-admin.site.register(BankAction)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
+    prepopulated_fields = {"slug": ("name",)}
 
+@admin.register(Provider)
+class ProviderAdmin(admin.ModelAdmin):
+    list_display = ('name', 'category', 'slug')
+    list_filter = ('category',)
+    prepopulated_fields = {"slug": ("name",)}
+    # Add the inlines here
+    inlines = [BranchInline, ActionInline]
 
-admin.site.register(Contact)
-admin.site.register(Appointment)
+@admin.register(Branch)
+class BranchAdmin(admin.ModelAdmin):
+    list_display = ('name', 'provider', 'city', 'address')
+    list_filter = ('provider', 'city')
+    search_fields = ('name', 'address')
+    prepopulated_fields = {"slug": ("name",)}
 
-admin.site.register(Category)
+@admin.register(Action)
+class ActionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'provider')
+    list_filter = ('provider',)
+    prepopulated_fields = {"slug": ("name",)}
 
-@admin.register(QRCode)
-class QRCodeAdmin(admin.ModelAdmin):
-    list_display = ('id', 'text', 'qr_preview', 'created_at')
+@admin.register(Appointment)
+class AppointmentAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'category', 'status', 'scheduled_at')
+    list_filter = ('status', 'category')
+    readonly_fields = ('verification_code', 'created_at')
 
-    def qr_preview(self, obj):
-        if obj.image:
-            return format_html(
-                '<img src="{}" width="100" height="100" />',
-                obj.image.url
-            )
-        return "No Image"
-
-    qr_preview.short_description = "QR Code"
+admin.site.register(QRCode)

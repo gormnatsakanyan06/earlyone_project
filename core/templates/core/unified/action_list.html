@@ -1,0 +1,5 @@
+{% for action in actions %}
+<a href="{% url 'datetime_selection' provider.slug branch.slug action.slug %}">
+    <span class="text-slate-800 font-bold text-lg">{{ action.name }}</span>
+</a>
+{% endfor %}
