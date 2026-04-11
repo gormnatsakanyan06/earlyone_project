@@ -1,60 +1,105 @@
 {% extends 'base.html' %}
-{% load static %}
 
 {% block content %}
-<section class="py-24 px-6" style="background-color: #0f172a;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    {% load static %}
+
+<link rel="stylesheet" href="{% static 'css/category.css' %}">
+</head>
+<body>
+
+  <section class="py-24 px-6" style="background-color: #0f172a;">
     <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-white mb-20">
-            {{ category.tagline|default:"Maximize Efficiency with Our Solution" }}
-        </h2>
-        
-        <div class="grid md:grid-cols-3 gap-12">
-            {% for feature in category.features %}
-            <div class="text-left group">
-                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-blue-500/20 transition-colors">
-                    <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ feature.svg }}"></path></svg>
-                </div>
-                <h3 class="text-xl font-bold text-white mb-3">{{ feature.title }}</h3>
-                <p class="text-slate-400 text-sm leading-relaxed">{{ feature.desc }}</p>
-            </div>
-            {% endfor %}
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center text-white mb-20">
+        Seamless Connection for Telecom Services
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-12">
+        <div class="text-left group">
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-red-500/20 transition-colors">
+            <svg class="w-7 h-7 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Instant Top-up</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Quick access to mobile balance and data plan management.</p>
         </div>
-    </div>
-</section>
 
-<section class="py-16 bg-slate-50 border-y border-slate-100">
+        <div class="text-left group">
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-blue-500/20 transition-colors">
+            <svg class="w-7 h-7 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Network Support</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Technical assistance for home internet and mobile connectivity.</p>
+        </div>
+
+        <div class="text-left group">
+          <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/10 group-hover:bg-green-500/20 transition-colors">
+            <svg class="w-7 h-7 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Device Store</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">Reserve time to pick up the latest smartphones and accessories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-50 border-y border-slate-100">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="flex flex-wrap items-center justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all">
-            {% for provider in providers %}
-                <img src="{% static 'images/'|add:provider.logo %}" class="h-16 w-auto" alt="{{ provider.name }}">
-            {% endfor %}
-        </div>
+      <div class="text-center mb-12">
+        <p class="text-slate-400 font-bold uppercase tracking-widest text-sm">Օպերատորներ</p>
+      </div>
+      
+      <div class="flex flex-wrap items-center justify-center gap-20 md:gap-40 opacity-80 grayscale hover:grayscale-0 transition-all duration-500">
+        <img src="viva.png" class="h-20 md:h-24 w-auto object-contain" alt="Viva">
+        <img src="team.png" class="h-20 md:h-24 w-auto object-contain" alt="Team">
+        <img src="ucom.png" class="h-20 md:h-24 w-auto object-contain" alt="Ucom">
+      </div>
     </div>
-</section>
+  </section>
 
-<main class="min-h-screen flex items-center justify-center p-4 py-24" style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
+  <main class="min-h-screen flex items-center justify-center p-4 py-24" style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
     <div class="relative w-full max-w-lg">
-        <div class="glass-effect rounded-[2.5rem] p-8">
-            <div class="mb-8 flex items-center justify-between">
-                <div>
-                    <h2 class="text-2xl font-extrabold text-slate-900">{{ category.name }}</h2>
-                    <p class="text-slate-500 text-xs mt-1">Ընտրեք կազմակերպությունը</p>
+      <div class="glass-effect rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-8 relative">
+        
+        <div class="relative z-10">
+          <div class="mb-8 flex items-center justify-between">
+              <div>
+                <h2 class="text-2xl font-extrabold text-slate-900 tracking-tight">{{ category.name }}</h2>
+                <p class="text-slate-500 text-xs font-medium mt-1">Ընտրեք Ձեր օպերատորը</p>
+              </div>
+              <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+                <img src="../loggo.png" alt="logo" class="h-6 w-auto">
+              </div>
+          </div>
+
+          <div class="grid grid-cols-1 gap-4">
+              {% for provider in providers %}
+            <a href="{% url 'branch_list' provider.slug %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm hover-viva">
+              <div class="flex items-center space-x-4">
+                <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm">
+                  <img src="viva.png" alt="Viva" class="w-full h-full object-contain">
                 </div>
-            </div>
-            <div class="grid grid-cols-1 gap-4">
-                {% for provider in providers %}
-                <a href="{% url 'branch_list' provider.slug %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4">
-                    <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center p-2">
-                            <img src="{% static 'images/'|add:provider.logo %}" alt="{{ provider.name }}" class="w-full h-full object-contain">
-                        </div>
-                        <span class="text-slate-800 font-bold text-lg">{{ provider.name }}</span>
-                    </div>
-                    <svg class="w-5 h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
-                </a>
-                {% endfor %}
-            </div>
+                <span class="text-slate-800 font-bold text-lg">{{ provider.name }}</span>
+              </div>
+              <svg class="w-5 h-5 text-slate-300 group-hover:text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+            </a>
+            {% endfor %}
+          </div>
+
+          <div class="mt-10 text-center">
+              <p class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.2em]">Earlyone © 2026</p>
+          </div>
         </div>
+      </div>
     </div>
-</main>
+  </main>
+
+</body>
+</html>
 {% endblock %}

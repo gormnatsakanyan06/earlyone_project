@@ -1,5 +1,69 @@
-{% for action in actions %}
-<a href="{% url 'datetime_selection' provider.slug branch.slug action.slug %}">
-    <span class="text-slate-800 font-bold text-lg">{{ action.name }}</span>
-</a>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Telecom Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   {% load static %}
+  <link rel="stylesheet" href="{% static 'css/actions.css' %}">
+</head>
+
+
+<body class="flex items-center justify-center p-2 md:p-4" style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
+
+  <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="relative w-full max-w-lg">
+    <div class="glass-effect rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-6 md:p-10 relative overflow-hidden">
+      
+      <div class="absolute -top-12 -right-16 w-64 h-64 pointer-events-none z-0">
+          <img src="../loggo.png" alt="" class="w-full h-full object-contain logo-accent">
+      </div>
+
+      <div class="relative z-10">
+        <div class="mb-6 md:mb-8">
+          <div class="flex items-center justify-between mb-4">
+              <button onclick="history.back()" class="back-btn flex items-center justify-center w-10 h-10 rounded-xl border border-slate-100 bg-white text-slate-400 transition-all shadow-sm">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+              </button>
+              <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+                <img src="../loggo.png" alt="logo" class="h-5 md:h-6 w-auto">
+              </div>
+          </div>
+          <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Ընտրեք ծառայությունը{{ provider.name }}</h2>
+          <p class="text-slate-500 text-xs md:text-sm font-medium mt-1">Նշեք Ձեր այցելության նպատակը {{ branch.name }}ում </p>
+        </div>
+
+        <div class="flex flex-col space-y-3 md:space-y-4">
+        {% for action in actions %}
+          
+          <a href="../datetime.html" class="category-btn group items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 md:py-4 text-left shadow-sm">
+            <div class="flex items-center space-x-4">
+              <div class="icon-box p-2.5 bg-white rounded-xl border border-slate-100 text-slate-500 shadow-sm">
+                <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+              </div>
+              <span class="text-slate-800 font-bold text-base md:text-lg">{{ action.name }}</span>
+            </div>
+            <svg class="w-4 h-4 md:w-5 md:h-5 text-slate-300 group-hover:text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+          </a>
+
+           {% endfor %}
+
+        </div>
+
+        <div class="mt-6 md:mt-8 text-center">
+            <p class="text-slate-400 text-[9px] md:text-[10px] font-bold uppercase tracking-[0.25em]">Ընտրեք գործողությունը շարունակելու համար</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+{% endblock %}
