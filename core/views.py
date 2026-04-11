@@ -21,24 +21,39 @@ def category_detail_view(request, category_slug):
         'providers': providers,
     })
 
-def branch_list_view(request, provider_slug):
-    provider = get_object_or_404(Provider, slug=provider_slug)
+def branch_list_view(request, category_slug, provider_slug):
+    provider = get_object_or_404(
+        Provider,
+        slug=provider_slug,
+        category__slug=category_slug  # 🔥 important filter
+    )
     branches = provider.branches.all()
+
     return render(request, 'core/unified/branch_list.html', {
         'provider': provider,
         'branches': branches
     })
 
-def action_list_view(request, provider_slug, branch_slug):
-    provider = get_object_or_404(Provider, slug=provider_slug)
-    branch = get_object_or_404(Branch, slug=branch_slug, provider=provider)
-    actions = provider.actions.all() # Fetch actions specific to this provider
+def action_list_view(request, category_slug, provider_slug, branch_slug):
+    provider = get_object_or_404(
+        Provider,
+        slug=provider_slug,
+        category__slug=category_slug
+    )
+
+    branch = get_object_or_404(
+        Branch,
+        slug=branch_slug,
+        provider=provider
+    )
+
+    actions = provider.actions.all()
+
     return render(request, 'core/unified/action_list.html', {
         'provider': provider,
         'branch': branch,
         'actions': actions
     })
-
 
 
 
