@@ -11,6 +11,17 @@ class Category(models.Model):
     svg_path = models.TextField()            # Icon path
     tagline = models.CharField(max_length=255, blank=True)
 
+    header_title = models.CharField(max_length=255, default="Seamless Connection")
+    
+    feature_1_title = models.CharField(max_length=100, blank=True)
+    feature_1_desc = models.TextField(blank=True)
+    
+    feature_2_title = models.CharField(max_length=100, blank=True)
+    feature_2_desc = models.TextField(blank=True)
+    
+    feature_3_title = models.CharField(max_length=100, blank=True)
+    feature_3_desc = models.TextField(blank=True)
+
     class Meta:
         verbose_name_plural = "Categories"
 

@@ -1,36 +1,28 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block title %}{{ provider.name }} {% endblock %}
+
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ provider.name }} - Branches</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    {% load static %}
-
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{% static 'css/branch.css' %}">
-</head>
 
-
-<body class="flex items-center justify-center p-2 md:p-4" style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
-
+<div class="min-h-screen flex items-center justify-center p-2 md:p-4" style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
+  
   <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none"></div>
 
   <div class="relative w-full max-w-lg">
     <div class="glass-effect rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-6 md:p-10 relative overflow-hidden">
       
       <div class="absolute -top-12 -right-16 w-64 h-64 pointer-events-none z-0">
-          <img src="loggo.png" alt="" class="w-full h-full object-contain logo-accent">
+          <img src="{% static 'images/loggo.png' %}" alt="" class="w-full h-full object-contain logo-accent opacity-10">
       </div>
 
       <div class="relative z-10">
         <div class="mb-6 md:mb-8">
           <div class="flex items-center justify-between mb-4">
-              <a  href="{% url 'category_detail' provider.category.slug %}" class="back-btn flex items-center justify-center w-10 h-10 rounded-xl border border-slate-100 bg-white text-slate-400 transition-all shadow-sm">
+              <a href="{% url 'category_detail' provider.category.slug %}" class="back-btn flex items-center justify-center w-10 h-10 rounded-xl border border-slate-100 bg-white text-slate-400 transition-all shadow-sm">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
               </a>
               <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
@@ -42,9 +34,8 @@
         </div>
 
         <div class="flex flex-col space-y-3 md:space-y-4">
-         {% for branch in branches %} 
-         
-          <a href="{% url 'action_list' provider.category.slug provider.slug branch.slug %}" class="category-btn group items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 md:py-4 text-left shadow-sm">
+          {% for branch in branches %} 
+          <a href="{% url 'action_list' provider.category.slug provider.slug branch.slug %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-4 py-3 md:py-4 text-left shadow-sm">
             <div class="flex items-center space-x-4">
               <div class="icon-box p-2.5 bg-white rounded-xl border border-slate-100 text-slate-400 shadow-sm group-hover:text-blue-900">
                 <svg class="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
@@ -56,8 +47,9 @@
             </div>
             <svg class="w-4 h-4 md:w-5 md:h-5 text-slate-300 group-hover:text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
           </a>
-
-            {% endfor %}
+          {% empty %}
+          <p class="text-slate-500 text-center">Մասնաճյուղեր չեն գտնվել:</p>
+          {% endfor %}
         </div>
 
         <div class="mt-6 md:mt-8 text-center">
@@ -66,7 +58,5 @@
       </div>
     </div>
   </div>
-
-</body>
-</html>
+</div>
 {% endblock %}

@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Scheduling System</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="{% static 'css/appointment.css' %}">
+</head>
+
+<body class="text-white">
+
+  <header class="min-h-[60vh] flex flex-col items-center justify-center text-center px-6 bg-[#0a0f1a] relative overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-6 tracking-tight">
+      Appointment <br> Scheduling System
+    </h1>
+    <p class="text-slate-400 max-w-lg text-lg mb-10 font-light leading-relaxed">
+      Make your services more accessible. Organize <br class="hidden md:block">
+      scheduling virtually. Suitable for any kind of business.
+    </p>
+    <a href="#booking-form" class="bg-[#00CFD5] hover:bg-[#00b8bd] text-white px-8 py-3.5 rounded-xl font-bold transition-all shadow-lg active:scale-95">
+      Get Started
+    </a>
+  </header>
+
+  <section class="features-bg py-20 px-6 md:px-20">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl md:text-5xl font-extrabold leading-tight mb-8">
+          Boost Customer Satisfaction While Saving Time
+        </h2>
+        <ul class="space-y-6">
+          <li class="flex items-center text-lg font-semibold"><span class="feature-dot"></span> Reduce Wait Times</li>
+          <li class="flex items-center text-lg font-semibold"><span class="feature-dot"></span> Elevate Customer Engagement</li>
+          <li class="flex items-center text-lg font-semibold"><span class="feature-dot"></span> Maximize Operating Hours</li>
+        </ul>
+      </div>
+      <div class="relative">
+        <div class="image-mask shadow-2xl">
+          <img src="{% static 'images/nkar.png' %}" alt="System Preview" class="w-full h-auto object-cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="booking-form" class="flex items-center justify-center p-4 py-24 bg-[#0a0f1a]">
+    <div class="relative w-full max-w-lg">
+      <div class="glass-effect rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-6 md:p-10 relative overflow-hidden">
+        <div class="relative z-10">
+          <div class="mb-8 flex items-center justify-between">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">Ընտրեք բաժինը</h2>
+              <p class="text-slate-500 text-xs md:text-sm font-medium mt-1">Խնդրում ենք ընտրել համապատասխան ոլորտը</p>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+              <img src="{% static 'images/loggo.png' %}" alt="logo" class="h-6 w-auto">
+            </div>
+          </div>
+
+          <div class="flex flex-col space-y-4">
+            {% for category in categories %}
+            <a href="{% url 'category_detail' category.slug %}" class="category-btn group flex items-center justify-between bg-slate-50 border border-slate-200 rounded-2xl px-5 py-4 text-left shadow-sm">
+              <div class="flex items-center space-x-4">
+                <div class="p-2.5 bg-white rounded-xl text-slate-500 shadow-sm group-hover:text-[#00a99d]">
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="{{ category.svg_path }}"></path>
+                  </svg>
+                </div>
+                <span class="text-slate-800 font-bold text-lg">{{ category.name }}</span>
+              </div>
+              <svg class="w-5 h-5 text-slate-300 group-hover:text-[#00a99d]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+            {% empty %}
+            <p class="text-slate-500 text-center">No categories found.</p>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

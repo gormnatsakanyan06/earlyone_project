@@ -1,0 +1,51 @@
+html { 
+      scroll-behavior: smooth;
+      overflow-y: scroll; 
+    }
+
+    
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none !important;
+      width: 0 !important;
+      height: 0 !important;
+    }
+
+    html, body {
+      -ms-overflow-style: none !important; 
+      scrollbar-width: none !important;  
+      font-family: 'Inter', sans-serif; 
+      background: #0a0f1a; 
+    }
+
+   
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .features-bg { background-color: #00a99d; }
+    
+    .feature-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #ffb800;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 12px;
+    }
+
+    .image-mask {
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-btn {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .category-btn:hover {
+      transform: translateX(8px);
+      border-color: #00a99d;
+    }

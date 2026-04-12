@@ -56,6 +56,12 @@ def action_list_view(request, category_slug, provider_slug, branch_slug):
     })
 
 
+def appointment_landing_view(request):
+    # Fetch all categories to display in the "Ընտրեք բաժինը" section
+    categories = Category.objects.all()
+    return render(request, 'core/unified/appointment.html', {
+        'categories': categories
+    })
 
 
 
