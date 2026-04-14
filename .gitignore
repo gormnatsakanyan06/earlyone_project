@@ -14,7 +14,6 @@ venv/
 *.log
 
 db.sqlite3
-media/
 node_modules/
 
 # Static files
