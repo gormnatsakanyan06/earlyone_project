@@ -104,7 +104,7 @@
         "category": 1,
         "name": "Էվոկա",
         "slug": "evoca",
-        "logo": "providers/logos/evoca_FJ4kX89.png"
+        "logo": "providers/logos/evoca.png"
     }
 },
 {
@@ -164,7 +164,7 @@
         "category": 3,
         "name": "Յուքոմ",
         "slug": "ucom",
-        "logo": "providers/logos/ucom_mT690vU.png"
+        "logo": "providers/logos/ucom.png"
     }
 },
 {
@@ -174,7 +174,7 @@
         "category": 4,
         "name": "Վեոլիա ջուր",
         "slug": "veolia",
-        "logo": "providers/logos/veolia_6gEqYvU.png"
+        "logo": "providers/logos/veolia.png"
     }
 },
 {
@@ -184,7 +184,7 @@
         "category": 4,
         "name": "Գազպրոմ",
         "slug": "gazprom",
-        "logo": "providers/logos/gazprom_7cHmG1P.png"
+        "logo": "providers/logos/gazprom.png"
     }
 },
 {
@@ -194,7 +194,7 @@
         "category": 4,
         "name": "ՀԷՑ",
         "slug": "hec",
-        "logo": "providers/logos/hec_3sOSw74.png"
+        "logo": "providers/logos/hec.png"
     }
 },
 {

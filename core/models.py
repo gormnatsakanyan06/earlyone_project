@@ -3,7 +3,14 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from smart_selects.db_fields import ChainedForeignKey
 import uuid
+from django.contrib.auth.models import User
 
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+    
+    def __str__(self):
+        return f"{self.user.username}'s Profile"
 
 class Contact(models.Model):
     types= [("Customer", "Հաճախորդ"),

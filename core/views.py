@@ -12,6 +12,7 @@ from rest_framework.response import Response
 
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Provider, Branch, Action
+from django.contrib.auth.decorators import login_required
 
 def category_detail_view(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
@@ -56,14 +57,12 @@ def action_list_view(request, category_slug, provider_slug, branch_slug):
     })
 
 
+@login_required # This redirects them to login if they aren't authenticated
 def appointment_landing_view(request):
-    # Fetch all categories to display in the "Ընտրեք բաժինը" section
     categories = Category.objects.all()
     return render(request, 'core/unified/appointment.html', {
         'categories': categories
     })
-
-
 
 # from .qr import create_qr_and_save
 

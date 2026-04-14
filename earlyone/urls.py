@@ -7,6 +7,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),  # or your app name
+    path('accounts/', include('allauth.urls')),
 ]
 
 # 🔥 THIS LINE FIXES YOUR PROBLEM

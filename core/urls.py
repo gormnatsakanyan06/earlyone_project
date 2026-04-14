@@ -1,9 +1,12 @@
-from django.urls import path
+from django.urls import path, include # Add include here
 from . import views
 
 urlpatterns = [
-    path('', views.appointment_landing_view, name='appointment_landing' ),
+    # Allauth system paths (Required for Google login to work)
+    path('accounts/', include('allauth.urls')),
 
+    # Your existing paths
+    path('', views.appointment_landing_view, name='appointment_landing' ),
     path('appointment/', views.appointment_landing_view, name='appointment_landing'),
 
     path('<slug:category_slug>/', views.category_detail_view, name='category_detail'),
