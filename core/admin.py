@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category, Provider, Branch, Action, QRCode, Appointment
+from .models import Category, Provider, Branch, Action, QRCode, Appointment, Contact
 
 # This allows you to add Branches while editing a Provider
 class BranchInline(admin.TabularInline):
@@ -46,3 +46,5 @@ class AppointmentAdmin(admin.ModelAdmin):
     readonly_fields = ('verification_code', 'created_at')
 
 admin.site.register(QRCode)
+
+admin.site.register(Contact)

@@ -5,10 +5,25 @@ from smart_selects.db_fields import ChainedForeignKey
 import uuid
 
 
+class Contact(models.Model):
+    types= [("Customer", "Հաճախորդ"),
+           ("Partner", "Գործընկեր"),
+           ]
+    type = models.CharField(max_length=20, choices=types)
+    name = models.CharField(max_length=80)
+    email = models.CharField(max_length=80)
+    phone = models.CharField(max_length=80, unique=True, null=True)
+    message = models.CharField(max_length=222)
+    company = models.CharField(max_length=80,null=True)
+
+    def __str__(self):
+        return f"{self.get_type_display()} | {self.type} | {self.name} | {self.email} | {self.phone}"
+
+
 class Category(models.Model):
-    name = models.CharField(max_length=100) # e.g., "Finance"
-    slug = models.SlugField(unique=True)     # e.g., "finance"
-    svg_path = models.TextField()            # Icon path
+    name = models.CharField(max_length=100) 
+    slug = models.SlugField(unique=True)     
+    svg_path = models.TextField()            
     tagline = models.CharField(max_length=255, blank=True)
 
     header_title = models.CharField(max_length=255, default="Seamless Connection")
