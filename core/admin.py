@@ -38,7 +38,7 @@ class ActionAdmin(admin.ModelAdmin):
     list_display = ('name', 'provider')
     list_filter = ('provider',)
     prepopulated_fields = {"slug": ("name",)}
-
+        
 @admin.register(Appointment)
 class AppointmentAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'category', 'status', 'scheduled_at')

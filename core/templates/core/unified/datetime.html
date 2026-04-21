@@ -1,0 +1,255 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Date & Time</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    input::-webkit-calendar-picker-indicator {
+      cursor: pointer;
+      opacity: 0.6;
+      transition: 0.2s;
+    }
+
+    input::-webkit-calendar-picker-indicator:hover {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body class="flex items-center justify-center p-2 md:p-4"
+      style="background: radial-gradient(circle at top left, #1e293b, #0a0f1a);">
+
+  <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+  <div class="relative w-full max-w-lg">
+    <div class="glass-effect rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] p-6 md:p-10 relative overflow-hidden">
+
+      <!-- HEADER -->
+      <div class="relative z-10 mb-8">
+
+        <div class="flex items-center justify-between mb-4">
+
+          <button onclick="history.back()"
+            class="flex items-center justify-center w-10 h-10 rounded-xl border border-slate-100 bg-white text-slate-400 hover:text-slate-900 transition-all shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+
+          <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
+  <img src="{{ provider.logo.url }}"
+     alt="{{ provider.name }}"
+     class="h-5 md:h-6 w-auto">
+
+        </div>
+
+        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Այցելության ժամը
+        </h2>
+
+        <p class="text-slate-500 text-xs md:text-sm font-medium mt-1">
+          Ընտրեք Ձեզ հարմար օրը և ժամը
+        </p>
+
+       <!-- <p class="text-blue-600 text-[10px] font-bold mt-2 uppercase tracking-wider">
+  Selected Service
+</p> -->  
+
+<p id="selectedInfo" class="text-slate-600 text-xs mt-2 font-medium"></p>
+      </div>
+
+      <!-- DATE -->
+      <div class="mb-6">
+        <label class="block text-slate-700 font-bold text-sm mb-2 px-1">Օր</label>
+        <input type="date" id="visitDate"
+          class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 text-slate-900 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all">
+      </div>
+
+      <!-- TIME -->
+      <div class="mb-10">
+        <label class="block text-slate-700 font-bold text-sm mb-2 px-1">Ժամ</label>
+        <input type="time" id="visitTime"
+          class="w-full bg-slate-50 border border-slate-200 rounded-2xl px-4 py-4 text-slate-900 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-100 transition-all">
+      </div>
+
+      <!-- BUTTON -->
+      <button id="confirmBtn"
+        class="w-full bg-slate-900 text-white py-5 rounded-2xl font-bold text-lg shadow-lg hover:shadow-xl active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
+
+        <span>Հաստատել ամրագրումը</span>
+
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                d="M5 13l4 4L19 7"></path>
+        </svg>
+
+      </button>
+
+    </div>
+  </div>
+
+  <script>
+function makeHash(obj) {
+    const json = JSON.stringify(obj);
+
+    return btoa(
+        encodeURIComponent(json).replace(/%([0-9A-F]{2})/g,
+        function(match, p1) {
+            return String.fromCharCode('0x' + p1);
+        })
+    )
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+}
+
+document.getElementById("confirmBtn").addEventListener("click", () => {
+
+    const stored = JSON.parse(localStorage.getItem("appointmentData"));
+
+    if (!stored) {
+        alert("Missing data");
+        return;
+    }
+
+    const date = document.getElementById("visitDate").value;
+    const time = document.getElementById("visitTime").value;
+
+    if (!date || !time) {
+        alert("Select date/time");
+        return;
+    }
+
+    const payload = {
+        ...stored,
+        date,
+        time
+    };
+
+    const hash = makeHash(data);
+
+    window.location.href =
+        `/${stored.category}/${stored.provider}/${stored.branch}/actions/datetime/${hash}/`;
+});
+
+
+const stored = JSON.parse(localStorage.getItem("appointmentData"));
+
+if (stored) {
+    document.getElementById("selectedInfo").innerText =
+        `${stored.categoryName || "—"} / ${stored.providerName || "—"} / ${stored.branchName || "—"} / ${stored.actionName || "—"}`;
+}
+
+
+</script>
+  <!-- AUTO SET DATE/TIME -->
+  <script>
+    const now = new Date();
+    document.getElementById('visitDate').value = now.toISOString().split('T')[0];
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    document.getElementById('visitTime').value = `${hours}:${minutes}`;
+  </script>
+
+  <!-- AJAX SUBMIT -->
+  <script>
+    document.getElementById("confirmBtn").addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      const stored = JSON.parse(localStorage.getItem("appointmentData"));
+
+      if (!stored) {
+        alert("Missing data. Please start again.");
+        window.location.href = "/";
+        return;
+      }
+
+      const date = document.getElementById("visitDate").value;
+      const time = document.getElementById("visitTime").value;
+
+      if (!date || !time) {
+        alert("Please select date and time");
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/create-appointment/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "X-CSRFToken": "{{ csrf_token }}"
+          },
+          body: JSON.stringify({
+            ...stored,
+            date,
+            time
+          })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          window.location.href = `/ticket/${data.appointment_id}/`;
+        } else {
+          alert(data.error || "Error creating appointment");
+        }
+
+      } catch (err) {
+        alert("Server error");
+      }
+    });
+
+    document.getElementById("confirmBtn").addEventListener("click", () => {
+
+    const stored = JSON.parse(localStorage.getItem("appointmentData"));
+
+    if (!stored) {
+        alert("Missing data");
+        return;
+    }
+
+    const date = document.getElementById("visitDate").value;
+    const time = document.getElementById("visitTime").value;
+
+    if (!date || !time) {
+        alert("Select date/time");
+        return;
+    }
+
+    const payload = {
+        ...stored,
+        date,
+        time
+    };
+
+    const hash = makeHash(payload);
+
+    // 🚀 NEW URL STRUCTURE
+    window.location.href =
+    `/${stored.category}/${stored.provider}/${stored.branch}/actions/datetime/${hash}/`;
+});
+  </script>
+
+</body>
+</html>
