@@ -76,6 +76,20 @@
 </div>
 
 <script>
+  function makeHash(obj) {
+    const json = JSON.stringify(obj);
+
+    return btoa(
+        encodeURIComponent(json).replace(/%([0-9A-F]{2})/g,
+        function(match, p1) {
+            return String.fromCharCode('0x' + p1);
+        })
+    )
+    .replace(/=/g, '')
+    .replace(/\+/g, '-')
+    .replace(/\//g, '_');
+}
+
 function selectAction(
     categoryName,
     providerName,
@@ -88,16 +102,20 @@ function selectAction(
 ) {
 
     const data = {
-        categorySlug,
-        providerSlug,
-        branchSlug,
-        actionId
+        category: categorySlug,
+        provider: providerSlug,
+        branch: branchSlug,
+        action: actionId,
+
+        categoryName,
+        providerName,
+        branchName,
+        actionName
     };
 
-    const hash = btoa(JSON.stringify(data))
-        .replace(/=/g, '')
-        .replace(/\+/g, '-')
-        .replace(/\//g, '_');
+    localStorage.setItem("appointmentData", JSON.stringify(data));
+
+    const hash = makeHash(data);  // ✅ FIXED
 
     window.location.href =
         `/${categorySlug}/${providerSlug}/${branchSlug}/actions/datetime/${hash}/`;

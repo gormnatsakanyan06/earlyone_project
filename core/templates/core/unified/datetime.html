@@ -8,31 +8,8 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    html, body {
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Inter', sans-serif;
-    }
-
-    .glass-effect {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-
-    input::-webkit-calendar-picker-indicator {
-      cursor: pointer;
-      opacity: 0.6;
-      transition: 0.2s;
-    }
-
-    input::-webkit-calendar-picker-indicator:hover {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-  </style>
+<link rel="stylesheet" href="{% static 'css/datetime.css' %}">
+  
 </head>
 
 <body class="flex items-center justify-center p-2 md:p-4"
@@ -55,7 +32,13 @@
                     d="M15 19l-7-7 7-7"></path>
             </svg>
           </button>
+  <h3 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
+          Այցելության օրը և ժամը
+        </h3>
 
+        <!-- <p class="text-slate-500 text-xs md:text-sm font-medium mt-1">
+          Ընտրեք Ձեզ հարմար օրը և ժամը
+        </p> -->
           <div class="bg-white p-2 rounded-xl border border-slate-100 shadow-sm">
   <img src="{{ provider.logo.url }}"
      alt="{{ provider.name }}"
@@ -63,13 +46,7 @@
 
         </div>
 
-        <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight">
-          Այցելության ժամը
-        </h2>
-
-        <p class="text-slate-500 text-xs md:text-sm font-medium mt-1">
-          Ընտրեք Ձեզ հարմար օրը և ժամը
-        </p>
+      
 
        <!-- <p class="text-blue-600 text-[10px] font-bold mt-2 uppercase tracking-wider">
   Selected Service
@@ -123,12 +100,14 @@ function makeHash(obj) {
     .replace(/\//g, '_');
 }
 
-document.getElementById("confirmBtn").addEventListener("click", () => {
+document.getElementById("confirmBtn").addEventListener("click", async (e) => {
+    e.preventDefault();
 
     const stored = JSON.parse(localStorage.getItem("appointmentData"));
 
     if (!stored) {
-        alert("Missing data");
+        alert("Missing data. Please start again.");
+        window.location.href = "/";
         return;
     }
 
@@ -136,20 +115,35 @@ document.getElementById("confirmBtn").addEventListener("click", () => {
     const time = document.getElementById("visitTime").value;
 
     if (!date || !time) {
-        alert("Select date/time");
+        alert("Please select date and time");
         return;
     }
 
-    const payload = {
-        ...stored,
-        date,
-        time
-    };
+    try {
+        const response = await fetch("/api/create-appointment/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+            body: JSON.stringify({
+                ...stored,
+                date,
+                time
+            })
+        });
 
-    const hash = makeHash(data);
+        const data = await response.json();
 
-    window.location.href =
-        `/${stored.category}/${stored.provider}/${stored.branch}/actions/datetime/${hash}/`;
+        if (data.success) {
+            window.location.href = `/ticket/${data.appointment_id}/`;
+        } else {
+            alert(data.error || "Error creating appointment");
+        }
+
+    } catch (err) {
+        alert("Server error");
+    }
 });
 
 
@@ -174,81 +168,8 @@ if (stored) {
 
   <!-- AJAX SUBMIT -->
   <script>
-    document.getElementById("confirmBtn").addEventListener("click", async (e) => {
-      e.preventDefault();
+ 
 
-      const stored = JSON.parse(localStorage.getItem("appointmentData"));
-
-      if (!stored) {
-        alert("Missing data. Please start again.");
-        window.location.href = "/";
-        return;
-      }
-
-      const date = document.getElementById("visitDate").value;
-      const time = document.getElementById("visitTime").value;
-
-      if (!date || !time) {
-        alert("Please select date and time");
-        return;
-      }
-
-      try {
-        const response = await fetch("/api/create-appointment/", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "X-CSRFToken": "{{ csrf_token }}"
-          },
-          body: JSON.stringify({
-            ...stored,
-            date,
-            time
-          })
-        });
-
-        const data = await response.json();
-
-        if (data.success) {
-          window.location.href = `/ticket/${data.appointment_id}/`;
-        } else {
-          alert(data.error || "Error creating appointment");
-        }
-
-      } catch (err) {
-        alert("Server error");
-      }
-    });
-
-    document.getElementById("confirmBtn").addEventListener("click", () => {
-
-    const stored = JSON.parse(localStorage.getItem("appointmentData"));
-
-    if (!stored) {
-        alert("Missing data");
-        return;
-    }
-
-    const date = document.getElementById("visitDate").value;
-    const time = document.getElementById("visitTime").value;
-
-    if (!date || !time) {
-        alert("Select date/time");
-        return;
-    }
-
-    const payload = {
-        ...stored,
-        date,
-        time
-    };
-
-    const hash = makeHash(payload);
-
-    // 🚀 NEW URL STRUCTURE
-    window.location.href =
-    `/${stored.category}/${stored.provider}/${stored.branch}/actions/datetime/${hash}/`;
-});
   </script>
 
 </body>

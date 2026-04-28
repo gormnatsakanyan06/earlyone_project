@@ -1,1054 +1,1167 @@
 [
 {
-    "model": "core.category",
-    "pk": 1,
-    "fields": {
-        "name": "Ֆինանսներ",
-        "slug": "finance",
-        "svg_path": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-10v10m0 0v2m0-12V4",
-        "tagline": "Ֆինանսներ",
-        "header_title": "Maximize Efficiency with a Multi-Level Solution",
-        "feature_1_title": "Smart Queuing",
-        "feature_1_desc": "Prevent crowded service desks with intelligent ticketing algorithms.",
-        "feature_2_title": "Web Dashboard",
-        "feature_2_desc": "User-friendly interface for real-time staff activity tracking.",
-        "feature_3_title": "BI Tools",
-        "feature_3_desc": "Instantly generate reports—weekly, monthly, or on demand."
-    }
-},
-{
-    "model": "core.category",
-    "pk": 2,
-    "fields": {
-        "name": "Պետական",
-        "slug": "government",
-        "svg_path": "M3 21h18M9 21V9h6v12M9 9V5h6v4M5 21V11h2v10M17 21V11h2v10",
-        "tagline": "Պետական",
-        "header_title": "Maximize Efficiency with a Multi-Level Solution",
-        "feature_1_title": "Smart Queuing",
-        "feature_1_desc": "Prevent crowded service desks with intelligent ticketing algorithms.",
-        "feature_2_title": "Web Dashboard",
-        "feature_2_desc": "User-friendly interface for real-time staff activity tracking.",
-        "feature_3_title": "BI Tools",
-        "feature_3_desc": "Instantly generate reports—weekly, monthly, or on demand."
-    }
-},
-{
-    "model": "core.category",
-    "pk": 3,
-    "fields": {
-        "name": "Տելեկոմ",
-        "slug": "telecom",
-        "svg_path": "M8.111 16.404a5 5 0 017.778 0M5.636 13.93a9 9 0 0112.728 0M3.515 11.808a13 13 0 0116.97 0M12 20h.01",
-        "tagline": "Տելեկոմ",
-        "header_title": "Seamless Connection for Telecom Services",
-        "feature_1_title": "Instant Top-up",
-        "feature_1_desc": "Quick access to mobile balance and data plan management.",
-        "feature_2_title": "Network Support",
-        "feature_2_desc": "Technical assistance for home internet and mobile connectivity.",
-        "feature_3_title": "Device Store",
-        "feature_3_desc": "Reserve time to pick up the latest smartphones and accessories."
-    }
-},
-{
-    "model": "core.category",
-    "pk": 4,
-    "fields": {
-        "name": "Կոմունալ",
-        "slug": "utility",
-        "svg_path": "M13 10V3L4 14h7v7l9-11h-7z",
-        "tagline": "Կոմունալ",
-        "header_title": "Manage Your Home Utilities Seamlessly",
-        "feature_1_title": "Easy Payment",
-        "feature_1_desc": "Skip the lines and pay your monthly utility bills directly through our priority flow.",
-        "feature_2_title": "Meter Tracking",
-        "feature_2_desc": "Book a consultation for meter installations, inspections, or reading disputes.",
-        "feature_3_title": "Quick Support",
-        "feature_3_desc": "Fast-track your requests for technical maintenance or service reconnection."
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 1,
-    "fields": {
-        "category": 1,
-        "name": "Ամերիա",
-        "slug": "ameria",
-        "logo": "providers/logos/ameria.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 2,
-    "fields": {
-        "category": 1,
-        "name": "Ինեկո",
-        "slug": "ineco",
-        "logo": "providers/logos/ineco.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 3,
-    "fields": {
-        "category": 1,
-        "name": "Ակբա",
-        "slug": "acba",
-        "logo": "providers/logos/acba.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 5,
-    "fields": {
-        "category": 1,
-        "name": "Էվոկա",
-        "slug": "evoca",
-        "logo": "providers/logos/evoca.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 6,
-    "fields": {
-        "category": 2,
-        "name": "Հաշվառման-քննական ստորաբաժանումներ",
-        "slug": "ngn",
-        "logo": "providers/logos/ngn.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 7,
-    "fields": {
-        "category": 2,
-        "name": "Ազգային արխիվ",
-        "slug": "azgayin_arxiv",
-        "logo": "providers/logos/arxiv.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 8,
-    "fields": {
-        "category": 2,
-        "name": "Կադաստր",
-        "slug": "kadastr",
-        "logo": "providers/logos/kadastr.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 9,
-    "fields": {
-        "category": 3,
-        "name": "Վիվա",
-        "slug": "viva",
-        "logo": "providers/logos/viva.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 10,
-    "fields": {
-        "category": 3,
-        "name": "Թիմ",
-        "slug": "team",
-        "logo": "providers/logos/team.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 11,
-    "fields": {
-        "category": 3,
-        "name": "Յուքոմ",
-        "slug": "ucom",
-        "logo": "providers/logos/ucom.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 12,
-    "fields": {
-        "category": 4,
-        "name": "Վեոլիա ջուր",
-        "slug": "veolia",
-        "logo": "providers/logos/veolia.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 13,
-    "fields": {
-        "category": 4,
-        "name": "Գազպրոմ",
-        "slug": "gazprom",
-        "logo": "providers/logos/gazprom.png"
-    }
-},
-{
-    "model": "core.provider",
-    "pk": 14,
-    "fields": {
-        "category": 4,
-        "name": "ՀԷՑ",
-        "slug": "hec",
-        "logo": "providers/logos/hec.png"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 1,
-    "fields": {
-        "provider": 1,
-        "name": "<<Կամար >>",
-        "slug": "Kamar",
-        "address": "Վ․ Սարգսյան 2",
-        "city": "Երևան",
-        "phone": "+37411111111"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 2,
-    "fields": {
-        "provider": 1,
-        "name": "<<Սայաթ-Նովա>>",
-        "slug": "Sayat-Nova",
-        "address": "Սայաթ-Նովա պող․ 8",
-        "city": "Երևան",
-        "phone": "+37422222222"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 3,
-    "fields": {
-        "provider": 1,
-        "name": "<<Քոչար>>",
-        "slug": "Qochar",
-        "address": "Հ․ Քոչար 21",
-        "city": "Երևան",
-        "phone": "+37433333333"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 4,
-    "fields": {
-        "provider": 1,
-        "name": "<<Արշակունյաց>>",
-        "slug": "Arshakunyats",
-        "address": "Արշակունյաց պող․ 34/3",
-        "city": "Երևան",
-        "phone": "+37444444444"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 5,
-    "fields": {
-        "provider": 2,
-        "name": "<<Գլխամասային գրասենյակ>>",
-        "slug": "glxamasayin",
-        "address": "Թումանյան 17",
-        "city": "Երևան",
-        "phone": "+37412121212"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 6,
-    "fields": {
-        "provider": 2,
-        "name": "<<Կոմիտաս>>",
-        "slug": "komitas",
-        "address": "Կոմիտաս պող․ 38",
-        "city": "Երևան",
-        "phone": "+37413131313"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 7,
-    "fields": {
-        "provider": 2,
-        "name": "<<Նոր-Նորք>>",
-        "slug": "nor_norq",
-        "address": "Գայի պող․ 23/6",
-        "city": "Երևան",
-        "phone": "+37414141414"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 8,
-    "fields": {
-        "provider": 2,
-        "name": "<<Մալաթիա>>",
-        "slug": "malatia",
-        "address": "Ռաֆֆու փող 39/4",
-        "city": "Երևան",
-        "phone": "+37415151515"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 9,
-    "fields": {
-        "provider": 3,
-        "name": "<<Կենտրոն>>",
-        "slug": "kentron",
-        "address": "Ամիրյան 1",
-        "city": "Երևան",
-        "phone": "+37421212121"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 10,
-    "fields": {
-        "provider": 3,
-        "name": "<<Արարատյան>>",
-        "slug": "araratyan",
-        "address": "Արշակույնաց 1",
-        "city": "Երևան",
-        "phone": "+37431313131"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 11,
-    "fields": {
-        "provider": 3,
-        "name": "<<Զեյթուն>>",
-        "slug": "zeytun",
-        "address": "Պ․ Սևակի 8/2",
-        "city": "Երևան",
-        "phone": "+37441414141"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 12,
-    "fields": {
-        "provider": 3,
-        "name": "<<Թամանյան>>",
-        "slug": "tamanyan",
-        "address": "Ազատության պող․ 24",
-        "city": "Երևան",
-        "phone": "+37451515151"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 14,
-    "fields": {
-        "provider": 5,
-        "name": "<<Գլխամասային գրասենյակ>>",
-        "slug": "glxamasayin",
-        "address": "Հանրապետության 44/2",
-        "city": "Երևան",
-        "phone": "+37431313131"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 15,
-    "fields": {
-        "provider": 5,
-        "name": "<<Կասկադ>>",
-        "slug": "kaskad",
-        "address": "Թամանյան 1/3",
-        "city": "Երևան",
-        "phone": "+37441414141"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 16,
-    "fields": {
-        "provider": 5,
-        "name": "<<Մալաթիա>>",
-        "slug": "malatia",
-        "address": "Զորավար Անդրանիկի 40",
-        "city": "Երևան",
-        "phone": "+37451515151"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 17,
-    "fields": {
-        "provider": 5,
-        "name": "<<Դավթաշեն>>",
-        "slug": "davtashen",
-        "address": "Դավթաշեն 4-րդ թաղ․ . 11/1",
-        "city": "Երևան",
-        "phone": "+37461616161"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 18,
-    "fields": {
-        "provider": 6,
-        "name": "Երևանի ՀՔԲ",
-        "slug": "hqb",
-        "address": "Գաջեգործների փող․ 76",
-        "city": "Երևան",
-        "phone": "+37400000000"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 19,
-    "fields": {
-        "provider": 7,
-        "name": "<<Գլխամասային մասնաշենք>>",
-        "slug": "glxamasayin",
-        "address": "Հրաչյա Քոչար 5",
-        "city": "Երևան",
-        "phone": "+37423232323"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 20,
-    "fields": {
-        "provider": 8,
-        "name": "<<Արաբկիր>>",
-        "slug": "arabkir",
-        "address": "Կոմիտասի պող․ 35/2",
-        "city": "Երևան",
-        "phone": "+37424242424"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 21,
-    "fields": {
-        "provider": 8,
-        "name": "<<Կետրոն>>",
-        "slug": "kentron",
-        "address": "Փ․ Բուզանդ 1/3",
-        "city": "Երևան",
-        "phone": "+37425252525"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 22,
-    "fields": {
-        "provider": 8,
-        "name": "<<Շենգավիթ>>",
-        "slug": "shengavit",
-        "address": "Մանանդյան 33",
-        "city": "Երևան",
-        "phone": "+37426262626"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 23,
-    "fields": {
-        "provider": 9,
-        "name": "<<Ամիրյան>>",
-        "slug": "amiryan",
-        "address": "Ամիրյան փող․ 3",
-        "city": "Երևա",
-        "phone": "+37431313131"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 24,
-    "fields": {
-        "provider": 9,
-        "name": "<<Հյուսիսային պողոտա>>",
-        "slug": "hyusisayin_pox",
-        "address": "Հյուսիսային պող․ 6/14",
-        "city": "Երևան",
-        "phone": "+37432323232"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 25,
-    "fields": {
-        "provider": 9,
-        "name": "<<Կոմիտաս>>",
-        "slug": "komitas",
-        "address": "Կոմիտաս պող․ 28",
-        "city": "Երևան",
-        "phone": "+37434343434"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 26,
-    "fields": {
-        "provider": 10,
-        "name": "<<Ազատություն>>",
-        "slug": "azatutyun",
-        "address": "Ազատության պող․ 24/1",
-        "city": "Երևան",
-        "phone": "+37491919191"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 27,
-    "fields": {
-        "provider": 10,
-        "name": "<<Աբովյան>>",
-        "slug": "abovyan",
-        "address": "Աբովյան փող. 21",
-        "city": "Երևան",
-        "phone": "+37481818181"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 28,
-    "fields": {
-        "provider": 10,
-        "name": "<<Մաշտոց>>",
-        "slug": "mashtots",
-        "address": "Մաշտոցի պող. 48",
-        "city": "Երևան",
-        "phone": "+37471717171"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 29,
-    "fields": {
-        "provider": 11,
-        "name": "<<Հյուսիսային պողոտա>>",
-        "slug": "hyusisayin_pox",
-        "address": "Հյուսիսային պող. 1",
-        "city": "Երևան",
-        "phone": "+37492929292"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 30,
-    "fields": {
-        "provider": 11,
-        "name": "<<Սայաթ-Նովա>>",
-        "slug": "sayat-nova",
-        "address": "Սայաթ-Նովա պող․ 19",
-        "city": "Երևան",
-        "phone": "+37493939393"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 31,
-    "fields": {
-        "provider": 11,
-        "name": "<<Մալաթիա>>",
-        "slug": "malatia",
-        "address": "Ռաֆֆու փող․ 19",
-        "city": "Երևան",
-        "phone": "+37490909090"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 32,
-    "fields": {
-        "provider": 12,
-        "name": "Սպասարկման կենտրոն N1",
-        "slug": "spasarkman_kentron1",
-        "address": "Աբովյան փող․ 66",
-        "city": "Երևան",
-        "phone": "+37456565656"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 33,
-    "fields": {
-        "provider": 12,
-        "name": "Սպասարկման կենտրոն N2",
-        "slug": "spasarkman_kentron2",
-        "address": "Ֆուչիկի 1/3",
-        "city": "Երևան",
-        "phone": "+37465656565"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 34,
-    "fields": {
-        "provider": 13,
-        "name": "<<Կենտրոն>>",
-        "slug": "kentron",
-        "address": "Թբիլիսյան խճ․ 43",
-        "city": "Երևան",
-        "phone": "+37445454545"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 35,
-    "fields": {
-        "provider": 13,
-        "name": "<<Էրեբունի>>",
-        "slug": "erebuni",
-        "address": "Ազատամարտիկների փող․ 89",
-        "city": "Երևան",
-        "phone": "+37454545454"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 36,
-    "fields": {
-        "provider": 13,
-        "name": "<<Աջափնյակ>>",
-        "slug": "ajapnyak",
-        "address": "Շինարարներ փող․ 15",
-        "city": "Երևան",
-        "phone": "+37456712364"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 37,
-    "fields": {
-        "provider": 14,
-        "name": "<<Արաբկիր>>",
-        "slug": "arabkir",
-        "address": "Հ․ Քոչար 13ա",
-        "city": "Երևան",
-        "phone": "+37493847501"
-    }
-},
-{
-    "model": "core.branch",
-    "pk": 38,
-    "fields": {
-        "provider": 14,
-        "name": "<<Նոր-Նորք>>",
-        "slug": "nor-norq",
-        "address": "Արմենակյան 127",
-        "city": "Երևան",
-        "phone": "+37472954051"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 1,
-    "fields": {
-        "provider": 1,
-        "name": "Քարտերի սպասարկում",
-        "slug": "qarteri_spasarkum",
-        "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 2,
-    "fields": {
-        "provider": 1,
-        "name": "Վարկ / Վարկային գործ",
-        "slug": "vark",
-        "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 3,
-    "fields": {
-        "provider": 1,
-        "name": "Ավանդներ",
-        "slug": "avandner",
-        "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 4,
-    "fields": {
-        "provider": 1,
-        "name": "Կանխիկ գործարքներ",
-        "slug": "kanxik_gorcarq",
-        "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n  <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n  <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 5,
-    "fields": {
-        "provider": 2,
-        "name": "Քարտերի սպասարկում",
-        "slug": "qarteri_spasarkum",
-        "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 6,
-    "fields": {
-        "provider": 2,
-        "name": "Վարկ / Վարկային գործ",
-        "slug": "vark",
-        "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 7,
-    "fields": {
-        "provider": 2,
-        "name": "Ավանդներ",
-        "slug": "avandner",
-        "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 8,
-    "fields": {
-        "provider": 2,
-        "name": "Կանխիկ գործարքներ",
-        "slug": "kanxik_gorcarq",
-        "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 9,
-    "fields": {
-        "provider": 3,
-        "name": "Քարտերի սպասարկում",
-        "slug": "qarteri_spasarkum",
-        "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 10,
-    "fields": {
-        "provider": 3,
-        "name": "Վարկ / Վարկային գործ",
-        "slug": "vark",
-        "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 11,
-    "fields": {
-        "provider": 3,
-        "name": "Ավանդներ",
-        "slug": "avandner",
-        "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 12,
-    "fields": {
-        "provider": 3,
-        "name": "Կանխիկ գործարքներ",
-        "slug": "kanxik_gorcarq",
-        "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n  <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n  <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 13,
-    "fields": {
-        "provider": 5,
-        "name": "Քարտերի սպասարկում",
-        "slug": "qarteri_spasarkum",
-        "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 14,
-    "fields": {
-        "provider": 5,
-        "name": "Վարկ / Վարկային գործ",
-        "slug": "vark",
-        "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 15,
-    "fields": {
-        "provider": 5,
-        "name": "Ավանդներ",
-        "slug": "avandner",
-        "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 16,
-    "fields": {
-        "provider": 5,
-        "name": "Կանխիկ գործարքներ",
-        "slug": "kanxik_gorcarq",
-        "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n  <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n  <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 17,
-    "fields": {
-        "provider": 6,
-        "name": "Վարորդական վկայական ստանալու տեսական քննություն",
-        "slug": "tesakan_qnnutyun",
-        "icon_svg": "<path d=\"M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z\"/>\r\n<path d=\"M14 3v5h5\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 18,
-    "fields": {
-        "provider": 6,
-        "name": "Վարորդական վկայական ստանալու գործնական քննություն",
-        "slug": "gorcnakan_qnnutyun",
-        "icon_svg": "<path d=\"M13 2L3 14h7v8l10-12h-7z\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 19,
-    "fields": {
-        "provider": 6,
-        "name": "Վարորդական վկայականի փոխանակում",
-        "slug": "vkayakani_poxanakum",
-        "icon_svg": "<path d=\"M4 4v6h6M20 20v-6h-6\"/>\r\n<path d=\"M20 10a8 8 0 00-14-4M4 14a8 8 0 0014 4\"/>"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 20,
-    "fields": {
-        "provider": 7,
-        "name": "Դիմումի հանձնում",
-        "slug": "dimumi_handznum",
-        "icon_svg": "<path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" />\r\n<path d=\"M9 14l2 2 4-4\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 21,
-    "fields": {
-        "provider": 7,
-        "name": "Դիմումի ստացում",
-        "slug": "dimumi_stacum",
-        "icon_svg": "<path d=\"M20 8v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8\" />\r\n<path d=\"M12 3v9\" /> \r\n<path d=\"M8 8l4 4 4-4\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 22,
-    "fields": {
-        "provider": 8,
-        "name": "Դիմումի հանձնում",
-        "slug": "dimumi_handznum",
-        "icon_svg": "<path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" />\r\n  <path d=\"M9 14l2 2 4-4\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 23,
-    "fields": {
-        "provider": 8,
-        "name": "Դիմումի ստացում",
-        "slug": "dimumi_stacum",
-        "icon_svg": "<path d=\"M20 8v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8\" />\r\n  <path d=\"M12 3v9\" />\r\n  <path d=\"M8 8l4 4 4-4\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 24,
-    "fields": {
-        "provider": 9,
-        "name": "Դառնալ բաժանորդ",
-        "slug": "darnal_bajanord",
-        "icon_svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 25,
-    "fields": {
-        "provider": 9,
-        "name": "Վճարումներ",
-        "slug": "vcharum",
-        "icon_svg": "<rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" />\r\n  <line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 26,
-    "fields": {
-        "provider": 9,
-        "name": "Հեռախոսների և սարքավորումների ձեռք բերում",
-        "slug": "heraxos_sarqavorumner",
-        "icon_svg": "<path d=\"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\" />\r\n  <path d=\"M16 10a4 4 0 0 1-8 0\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 27,
-    "fields": {
-        "provider": 9,
-        "name": "Խորհրդատվություն և աջակցում",
-        "slug": "ajakcum",
-        "icon_svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n  <circle cx=\"12\" cy=\"12\" r=\"4\" />\r\n  <line x1=\"4.93\" y1=\"4.93\" x2=\"9.17\" y2=\"9.17\" />\r\n  <line x1=\"14.83\" y1=\"14.83\" x2=\"19.07\" y2=\"19.07\" />\r\n  <line x1=\"14.83\" y1=\"9.17\" x2=\"19.07\" y2=\"4.93\" />\r\n  <line x1=\"4.93\" y1=\"19.07\" x2=\"9.17\" y2=\"14.83\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 28,
-    "fields": {
-        "provider": 10,
-        "name": "Դառնալ բաժանորդ",
-        "slug": "darnal_bajanord",
-        "icon_svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 29,
-    "fields": {
-        "provider": 10,
-        "name": "Վճարումներ",
-        "slug": "vcharum",
-        "icon_svg": "<rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" />\r\n  <line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 30,
-    "fields": {
-        "provider": 10,
-        "name": "Հեռախոսների և սարքավորումների ձեռք բերում",
-        "slug": "heraxos_sarqavorumner",
-        "icon_svg": "<path d=\"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\" />\r\n  <path d=\"M16 10a4 4 0 0 1-8 0\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 31,
-    "fields": {
-        "provider": 10,
-        "name": "Խորհրդատվություն և աջակցում",
-        "slug": "ajakcum",
-        "icon_svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n  <circle cx=\"12\" cy=\"12\" r=\"4\" />\r\n  <line x1=\"4.93\" y1=\"4.93\" x2=\"9.17\" y2=\"9.17\" />\r\n  <line x1=\"14.83\" y1=\"14.83\" x2=\"19.07\" y2=\"19.07\" />\r\n  <line x1=\"14.83\" y1=\"9.17\" x2=\"19.07\" y2=\"4.93\" />\r\n  <line x1=\"4.93\" y1=\"19.07\" x2=\"9.17\" y2=\"14.83\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 32,
-    "fields": {
-        "provider": 11,
-        "name": "Դառնալ բաժանորդ",
-        "slug": "darnal_bajanord",
-        "icon_svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 33,
-    "fields": {
-        "provider": 11,
-        "name": "Վճարումներ",
-        "slug": "vcharum",
-        "icon_svg": "<rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" />\r\n  <line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 34,
-    "fields": {
-        "provider": 11,
-        "name": "Հեռախոսների և սարքավորումների ձեռք բերում",
-        "slug": "heraxos_sarqavorumner",
-        "icon_svg": "<path d=\"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\" />\r\n  <path d=\"M16 10a4 4 0 0 1-8 0\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 35,
-    "fields": {
-        "provider": 11,
-        "name": "Խորհրդատվություն և աջակցում",
-        "slug": "ajakcum",
-        "icon_svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n  <circle cx=\"12\" cy=\"12\" r=\"4\" />\r\n  <line x1=\"4.93\" y1=\"4.93\" x2=\"9.17\" y2=\"9.17\" />\r\n  <line x1=\"14.83\" y1=\"14.83\" x2=\"19.07\" y2=\"19.07\" />\r\n  <line x1=\"14.83\" y1=\"9.17\" x2=\"19.07\" y2=\"4.93\" />\r\n  <line x1=\"4.93\" y1=\"19.07\" x2=\"9.17\" y2=\"14.83\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 36,
-    "fields": {
-        "provider": 12,
-        "name": "Ջրաչափի փոխարինում, տեղադրում",
-        "slug": "jrachap",
-        "icon_svg": "<path d=\"M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 37,
-    "fields": {
-        "provider": 12,
-        "name": "Ավարտական ակտի հաստատում",
-        "slug": "akti_hastatum",
-        "icon_svg": "<path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 38,
-    "fields": {
-        "provider": 13,
-        "name": "Գազի սարքի փոխարինում, տեղադրում",
-        "slug": "gazi_poxarinum",
-        "icon_svg": "<path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 39,
-    "fields": {
-        "provider": 13,
-        "name": "Գազի հաշվիչի կապարակնքում",
-        "slug": "hashvich",
-        "icon_svg": "<path d=\"M7 11V7a5 5 0 0 1 10 0v4\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 40,
-    "fields": {
-        "provider": 14,
-        "name": "Հաշվիչի փոխարինում / տեղակայում",
-        "slug": "hashvichi_poxarinum",
-        "icon_svg": "<polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\" />"
-    }
-},
-{
-    "model": "core.action",
-    "pk": 41,
-    "fields": {
-        "provider": 14,
-        "name": "Հզորության փոխարինում",
-        "slug": "hzorutyan_poxarinum",
-        "icon_svg": "<polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\" />\r\n  <polyline points=\"17 6 23 6 23 12\" />"
-    }
+  "model": "core.category",
+  "pk": 1,
+  "fields": {
+    "name": "Ֆինանսներ",
+    "slug": "finance",
+    "svg_path": "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-10v10m0 0v2m0-12V4",
+    "tagline": "Ֆինանսներ",
+    "header_title": "Maximize Efficiency with a Multi-Level Solution",
+    "feature_1_title": "Smart Queuing",
+    "feature_1_desc": "Prevent crowded service desks with intelligent ticketing algorithms.",
+    "feature_2_title": "Web Dashboard",
+    "feature_2_desc": "User-friendly interface for real-time staff activity tracking.",
+    "feature_3_title": "BI Tools",
+    "feature_3_desc": "Instantly generate reports—weekly, monthly, or on demand."
+  }
+},
+{
+  "model": "core.category",
+  "pk": 2,
+  "fields": {
+    "name": "Պետական",
+    "slug": "government",
+    "svg_path": "M3 21h18M9 21V9h6v12M9 9V5h6v4M5 21V11h2v10M17 21V11h2v10",
+    "tagline": "Պետական",
+    "header_title": "Maximize Efficiency with a Multi-Level Solution",
+    "feature_1_title": "Smart Queuing",
+    "feature_1_desc": "Prevent crowded service desks with intelligent ticketing algorithms.",
+    "feature_2_title": "Web Dashboard",
+    "feature_2_desc": "User-friendly interface for real-time staff activity tracking.",
+    "feature_3_title": "BI Tools",
+    "feature_3_desc": "Instantly generate reports—weekly, monthly, or on demand."
+  }
+},
+{
+  "model": "core.category",
+  "pk": 3,
+  "fields": {
+    "name": "Տելեկոմ",
+    "slug": "telecom",
+    "svg_path": "M8.111 16.404a5 5 0 017.778 0M5.636 13.93a9 9 0 0112.728 0M3.515 11.808a13 13 0 0116.97 0M12 20h.01",
+    "tagline": "Տելեկոմ",
+    "header_title": "Seamless Connection for Telecom Services",
+    "feature_1_title": "Instant Top-up",
+    "feature_1_desc": "Quick access to mobile balance and data plan management.",
+    "feature_2_title": "Network Support",
+    "feature_2_desc": "Technical assistance for home internet and mobile connectivity.",
+    "feature_3_title": "Device Store",
+    "feature_3_desc": "Reserve time to pick up the latest smartphones and accessories."
+  }
+},
+{
+  "model": "core.category",
+  "pk": 4,
+  "fields": {
+    "name": "Կոմունալ",
+    "slug": "utility",
+    "svg_path": "M13 10V3L4 14h7v7l9-11h-7z",
+    "tagline": "Կոմունալ",
+    "header_title": "Manage Your Home Utilities Seamlessly",
+    "feature_1_title": "Easy Payment",
+    "feature_1_desc": "Skip the lines and pay your monthly utility bills directly through our priority flow.",
+    "feature_2_title": "Meter Tracking",
+    "feature_2_desc": "Book a consultation for meter installations, inspections, or reading disputes.",
+    "feature_3_title": "Quick Support",
+    "feature_3_desc": "Fast-track your requests for technical maintenance or service reconnection."
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Ամերիա",
+    "slug": "ameria",
+    "logo": "providers/logos/ameria.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "Ինեկո",
+    "slug": "ineco",
+    "logo": "providers/logos/ineco.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "Ակբա",
+    "slug": "acba",
+    "logo": "providers/logos/acba.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "name": "Էվոկա",
+    "slug": "evoca",
+    "logo": "providers/logos/evoca.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 6,
+  "fields": {
+    "category": 2,
+    "name": "Հաշվառման-քննական ստորաբաժանումներ",
+    "slug": "ngn",
+    "logo": "providers/logos/ngn.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 7,
+  "fields": {
+    "category": 2,
+    "name": "Ազգային արխիվ",
+    "slug": "azgayin_arxiv",
+    "logo": "providers/logos/arxiv.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 8,
+  "fields": {
+    "category": 2,
+    "name": "Կադաստր",
+    "slug": "kadastr",
+    "logo": "providers/logos/kadastr.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 9,
+  "fields": {
+    "category": 3,
+    "name": "Վիվա",
+    "slug": "viva",
+    "logo": "providers/logos/viva.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "name": "Թիմ",
+    "slug": "team",
+    "logo": "providers/logos/team.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 11,
+  "fields": {
+    "category": 3,
+    "name": "Յուքոմ",
+    "slug": "ucom",
+    "logo": "providers/logos/ucom.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 12,
+  "fields": {
+    "category": 4,
+    "name": "Վեոլիա ջուր",
+    "slug": "veolia",
+    "logo": "providers/logos/veolia.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 13,
+  "fields": {
+    "category": 4,
+    "name": "Գազպրոմ",
+    "slug": "gazprom",
+    "logo": "providers/logos/gazprom.png"
+  }
+},
+{
+  "model": "core.provider",
+  "pk": 14,
+  "fields": {
+    "category": 4,
+    "name": "ՀԷՑ",
+    "slug": "hec",
+    "logo": "providers/logos/hec.png"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 1,
+  "fields": {
+    "provider": 1,
+    "name": "<<Կամար >>",
+    "slug": "Kamar",
+    "address": "Վ․ Սարգսյան 2",
+    "city": "Երևան",
+    "phone": "+37411111111"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 2,
+  "fields": {
+    "provider": 1,
+    "name": "<<Սայաթ-Նովա>>",
+    "slug": "Sayat-Nova",
+    "address": "Սայաթ-Նովա պող․ 8",
+    "city": "Երևան",
+    "phone": "+37422222222"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 3,
+  "fields": {
+    "provider": 1,
+    "name": "<<Քոչար>>",
+    "slug": "Qochar",
+    "address": "Հ․ Քոչար 21",
+    "city": "Երևան",
+    "phone": "+37433333333"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 4,
+  "fields": {
+    "provider": 1,
+    "name": "<<Արշակունյաց>>",
+    "slug": "Arshakunyats",
+    "address": "Արշակունյաց պող․ 34/3",
+    "city": "Երևան",
+    "phone": "+37444444444"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 5,
+  "fields": {
+    "provider": 2,
+    "name": "<<Գլխամասային գրասենյակ>>",
+    "slug": "glxamasayin",
+    "address": "Թումանյան 17",
+    "city": "Երևան",
+    "phone": "+37412121212"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 6,
+  "fields": {
+    "provider": 2,
+    "name": "<<Կոմիտաս>>",
+    "slug": "komitas",
+    "address": "Կոմիտաս պող․ 38",
+    "city": "Երևան",
+    "phone": "+37413131313"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 7,
+  "fields": {
+    "provider": 2,
+    "name": "<<Նոր-Նորք>>",
+    "slug": "nor_norq",
+    "address": "Գայի պող․ 23/6",
+    "city": "Երևան",
+    "phone": "+37414141414"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 8,
+  "fields": {
+    "provider": 2,
+    "name": "<<Մալաթիա>>",
+    "slug": "malatia",
+    "address": "Ռաֆֆու փող 39/4",
+    "city": "Երևան",
+    "phone": "+37415151515"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 9,
+  "fields": {
+    "provider": 3,
+    "name": "<<Կենտրոն>>",
+    "slug": "kentron",
+    "address": "Ամիրյան 1",
+    "city": "Երևան",
+    "phone": "+37421212121"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 10,
+  "fields": {
+    "provider": 3,
+    "name": "<<Արարատյան>>",
+    "slug": "araratyan",
+    "address": "Արշակույնաց 1",
+    "city": "Երևան",
+    "phone": "+37431313131"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 11,
+  "fields": {
+    "provider": 3,
+    "name": "<<Զեյթուն>>",
+    "slug": "zeytun",
+    "address": "Պ․ Սևակի 8/2",
+    "city": "Երևան",
+    "phone": "+37441414141"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 12,
+  "fields": {
+    "provider": 3,
+    "name": "<<Թամանյան>>",
+    "slug": "tamanyan",
+    "address": "Ազատության պող․ 24",
+    "city": "Երևան",
+    "phone": "+37451515151"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 14,
+  "fields": {
+    "provider": 5,
+    "name": "<<Գլխամասային գրասենյակ>>",
+    "slug": "glxamasayin",
+    "address": "Հանրապետության 44/2",
+    "city": "Երևան",
+    "phone": "+37431313131"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 15,
+  "fields": {
+    "provider": 5,
+    "name": "<<Կասկադ>>",
+    "slug": "kaskad",
+    "address": "Թամանյան 1/3",
+    "city": "Երևան",
+    "phone": "+37441414141"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 16,
+  "fields": {
+    "provider": 5,
+    "name": "<<Մալաթիա>>",
+    "slug": "malatia",
+    "address": "Զորավար Անդրանիկի 40",
+    "city": "Երևան",
+    "phone": "+37451515151"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 17,
+  "fields": {
+    "provider": 5,
+    "name": "<<Դավթաշեն>>",
+    "slug": "davtashen",
+    "address": "Դավթաշեն 4-րդ թաղ․ . 11/1",
+    "city": "Երևան",
+    "phone": "+37461616161"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 18,
+  "fields": {
+    "provider": 6,
+    "name": "Երևանի ՀՔԲ",
+    "slug": "hqb",
+    "address": "Գաջեգործների փող․ 76",
+    "city": "Երևան",
+    "phone": "+37400000000"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 19,
+  "fields": {
+    "provider": 7,
+    "name": "<<Գլխամասային մասնաշենք>>",
+    "slug": "glxamasayin",
+    "address": "Հրաչյա Քոչար 5",
+    "city": "Երևան",
+    "phone": "+37423232323"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 20,
+  "fields": {
+    "provider": 8,
+    "name": "<<Արաբկիր>>",
+    "slug": "arabkir",
+    "address": "Կոմիտասի պող․ 35/2",
+    "city": "Երևան",
+    "phone": "+37424242424"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 21,
+  "fields": {
+    "provider": 8,
+    "name": "<<Կետրոն>>",
+    "slug": "kentron",
+    "address": "Փ․ Բուզանդ 1/3",
+    "city": "Երևան",
+    "phone": "+37425252525"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 22,
+  "fields": {
+    "provider": 8,
+    "name": "<<Շենգավիթ>>",
+    "slug": "shengavit",
+    "address": "Մանանդյան 33",
+    "city": "Երևան",
+    "phone": "+37426262626"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 23,
+  "fields": {
+    "provider": 9,
+    "name": "<<Ամիրյան>>",
+    "slug": "amiryan",
+    "address": "Ամիրյան փող․ 3",
+    "city": "Երևա",
+    "phone": "+37431313131"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 24,
+  "fields": {
+    "provider": 9,
+    "name": "<<Հյուսիսային պողոտա>>",
+    "slug": "hyusisayin_pox",
+    "address": "Հյուսիսային պող․ 6/14",
+    "city": "Երևան",
+    "phone": "+37432323232"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 25,
+  "fields": {
+    "provider": 9,
+    "name": "<<Կոմիտաս>>",
+    "slug": "komitas",
+    "address": "Կոմիտաս պող․ 28",
+    "city": "Երևան",
+    "phone": "+37434343434"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 26,
+  "fields": {
+    "provider": 10,
+    "name": "<<Ազատություն>>",
+    "slug": "azatutyun",
+    "address": "Ազատության պող․ 24/1",
+    "city": "Երևան",
+    "phone": "+37491919191"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 27,
+  "fields": {
+    "provider": 10,
+    "name": "<<Աբովյան>>",
+    "slug": "abovyan",
+    "address": "Աբովյան փող. 21",
+    "city": "Երևան",
+    "phone": "+37481818181"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 28,
+  "fields": {
+    "provider": 10,
+    "name": "<<Մաշտոց>>",
+    "slug": "mashtots",
+    "address": "Մաշտոցի պող. 48",
+    "city": "Երևան",
+    "phone": "+37471717171"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 29,
+  "fields": {
+    "provider": 11,
+    "name": "<<Հյուսիսային պողոտա>>",
+    "slug": "hyusisayin_pox",
+    "address": "Հյուսիսային պող. 1",
+    "city": "Երևան",
+    "phone": "+37492929292"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 30,
+  "fields": {
+    "provider": 11,
+    "name": "<<Սայաթ-Նովա>>",
+    "slug": "sayat-nova",
+    "address": "Սայաթ-Նովա պող․ 19",
+    "city": "Երևան",
+    "phone": "+37493939393"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 31,
+  "fields": {
+    "provider": 11,
+    "name": "<<Մալաթիա>>",
+    "slug": "malatia",
+    "address": "Ռաֆֆու փող․ 19",
+    "city": "Երևան",
+    "phone": "+37490909090"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 32,
+  "fields": {
+    "provider": 12,
+    "name": "Սպասարկման կենտրոն N1",
+    "slug": "spasarkman_kentron1",
+    "address": "Աբովյան փող․ 66",
+    "city": "Երևան",
+    "phone": "+37456565656"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 33,
+  "fields": {
+    "provider": 12,
+    "name": "Սպասարկման կենտրոն N2",
+    "slug": "spasarkman_kentron2",
+    "address": "Ֆուչիկի 1/3",
+    "city": "Երևան",
+    "phone": "+37465656565"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 34,
+  "fields": {
+    "provider": 13,
+    "name": "<<Կենտրոն>>",
+    "slug": "kentron",
+    "address": "Թբիլիսյան խճ․ 43",
+    "city": "Երևան",
+    "phone": "+37445454545"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 35,
+  "fields": {
+    "provider": 13,
+    "name": "<<Էրեբունի>>",
+    "slug": "erebuni",
+    "address": "Ազատամարտիկների փող․ 89",
+    "city": "Երևան",
+    "phone": "+37454545454"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 36,
+  "fields": {
+    "provider": 13,
+    "name": "<<Աջափնյակ>>",
+    "slug": "ajapnyak",
+    "address": "Շինարարներ փող․ 15",
+    "city": "Երևան",
+    "phone": "+37456712364"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 37,
+  "fields": {
+    "provider": 14,
+    "name": "<<Արաբկիր>>",
+    "slug": "arabkir",
+    "address": "Հ․ Քոչար 13ա",
+    "city": "Երևան",
+    "phone": "+37493847501"
+  }
+},
+{
+  "model": "core.branch",
+  "pk": 38,
+  "fields": {
+    "provider": 14,
+    "name": "<<Նոր-Նորք>>",
+    "slug": "nor-norq",
+    "address": "Արմենակյան 127",
+    "city": "Երևան",
+    "phone": "+37472954051"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 1,
+  "fields": {
+    "provider": 1,
+    "name": "Քարտերի սպասարկում",
+    "slug": "qarteri_spasarkum",
+    "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 2,
+  "fields": {
+    "provider": 1,
+    "name": "Վարկ / Վարկային գործ",
+    "slug": "vark",
+    "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 3,
+  "fields": {
+    "provider": 1,
+    "name": "Ավանդներ",
+    "slug": "avandner",
+    "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 4,
+  "fields": {
+    "provider": 1,
+    "name": "Կանխիկ գործարքներ",
+    "slug": "kanxik_gorcarq",
+    "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n  <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n  <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 5,
+  "fields": {
+    "provider": 2,
+    "name": "Քարտերի սպասարկում",
+    "slug": "qarteri_spasarkum",
+    "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 6,
+  "fields": {
+    "provider": 2,
+    "name": "Վարկ / Վարկային գործ",
+    "slug": "vark",
+    "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 7,
+  "fields": {
+    "provider": 2,
+    "name": "Ավանդներ",
+    "slug": "avandner",
+    "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 8,
+  "fields": {
+    "provider": 2,
+    "name": "Կանխիկ գործարքներ",
+    "slug": "kanxik_gorcarq",
+    "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 9,
+  "fields": {
+    "provider": 3,
+    "name": "Քարտերի սպասարկում",
+    "slug": "qarteri_spasarkum",
+    "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 10,
+  "fields": {
+    "provider": 3,
+    "name": "Վարկ / Վարկային գործ",
+    "slug": "vark",
+    "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 11,
+  "fields": {
+    "provider": 3,
+    "name": "Ավանդներ",
+    "slug": "avandner",
+    "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 12,
+  "fields": {
+    "provider": 3,
+    "name": "Կանխիկ գործարքներ",
+    "slug": "kanxik_gorcarq",
+    "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n  <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n  <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 13,
+  "fields": {
+    "provider": 5,
+    "name": "Քարտերի սպասարկում",
+    "slug": "qarteri_spasarkum",
+    "icon_svg": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\" ry=\"2\" stroke-width=\"2\"/>\r\n  <line x1=\"3\" y1=\"10\" x2=\"21\" y2=\"10\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 14,
+  "fields": {
+    "provider": 5,
+    "name": "Վարկ / Վարկային գործ",
+    "slug": "vark",
+    "icon_svg": "<rect x=\"6\" y=\"3\" width=\"12\" height=\"18\" rx=\"2\" stroke-width=\"2\"/>\r\n  <rect x=\"9\" y=\"6\" width=\"6\" height=\"2\" stroke-width=\"2\"/>\r\n  <circle cx=\"9\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"11\" r=\"1\"/>\r\n  <circle cx=\"9\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"12\" cy=\"15\" r=\"1\"/>\r\n  <circle cx=\"15\" cy=\"15\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 15,
+  "fields": {
+    "provider": 5,
+    "name": "Ավանդներ",
+    "slug": "avandner",
+    "icon_svg": "<polygon points=\"12 3 3 8 21 8 12 3\" stroke-width=\"2\"/>\r\n  <line x1=\"4\" y1=\"8\" x2=\"4\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"10\" y1=\"8\" x2=\"10\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"14\" y1=\"8\" x2=\"14\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"20\" y1=\"8\" x2=\"20\" y2=\"20\" stroke-width=\"2\"/>\r\n  <line x1=\"2\" y1=\"20\" x2=\"22\" y2=\"20\" stroke-width=\"2\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 16,
+  "fields": {
+    "provider": 5,
+    "name": "Կանխիկ գործարքներ",
+    "slug": "kanxik_gorcarq",
+    "icon_svg": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"10\" rx=\"2\" stroke-width=\"2\"/>\r\n  <path d=\"M16 12h2\" stroke-width=\"2\"/>\r\n  <circle cx=\"14\" cy=\"12\" r=\"1\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 17,
+  "fields": {
+    "provider": 6,
+    "name": "Վարորդական վկայական ստանալու տեսական քննություն",
+    "slug": "tesakan_qnnutyun",
+    "icon_svg": "<path d=\"M7 3h7l5 5v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z\"/>\r\n<path d=\"M14 3v5h5\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 18,
+  "fields": {
+    "provider": 6,
+    "name": "Վարորդական վկայական ստանալու գործնական քննություն",
+    "slug": "gorcnakan_qnnutyun",
+    "icon_svg": "<path d=\"M13 2L3 14h7v8l10-12h-7z\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 19,
+  "fields": {
+    "provider": 6,
+    "name": "Վարորդական վկայականի փոխանակում",
+    "slug": "vkayakani_poxanakum",
+    "icon_svg": "<path d=\"M4 4v6h6M20 20v-6h-6\"/>\r\n<path d=\"M20 10a8 8 0 00-14-4M4 14a8 8 0 0014 4\"/>"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 20,
+  "fields": {
+    "provider": 7,
+    "name": "Դիմումի հանձնում",
+    "slug": "dimumi_handznum",
+    "icon_svg": "<path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" />\r\n<path d=\"M9 14l2 2 4-4\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 21,
+  "fields": {
+    "provider": 7,
+    "name": "Դիմումի ստացում",
+    "slug": "dimumi_stacum",
+    "icon_svg": "<path d=\"M20 8v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8\" />\r\n<path d=\"M12 3v9\" /> \r\n<path d=\"M8 8l4 4 4-4\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 22,
+  "fields": {
+    "provider": 8,
+    "name": "Դիմումի հանձնում",
+    "slug": "dimumi_handznum",
+    "icon_svg": "<path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\" />\r\n  <path d=\"M9 14l2 2 4-4\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 23,
+  "fields": {
+    "provider": 8,
+    "name": "Դիմումի ստացում",
+    "slug": "dimumi_stacum",
+    "icon_svg": "<path d=\"M20 8v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8\" />\r\n  <path d=\"M12 3v9\" />\r\n  <path d=\"M8 8l4 4 4-4\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 24,
+  "fields": {
+    "provider": 9,
+    "name": "Դառնալ բաժանորդ",
+    "slug": "darnal_bajanord",
+    "icon_svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 25,
+  "fields": {
+    "provider": 9,
+    "name": "Վճարումներ",
+    "slug": "vcharum",
+    "icon_svg": "<rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" />\r\n  <line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 26,
+  "fields": {
+    "provider": 9,
+    "name": "Հեռախոսների և սարքավորումների ձեռք բերում",
+    "slug": "heraxos_sarqavorumner",
+    "icon_svg": "<path d=\"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\" />\r\n  <path d=\"M16 10a4 4 0 0 1-8 0\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 27,
+  "fields": {
+    "provider": 9,
+    "name": "Խորհրդատվություն և աջակցում",
+    "slug": "ajakcum",
+    "icon_svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n  <circle cx=\"12\" cy=\"12\" r=\"4\" />\r\n  <line x1=\"4.93\" y1=\"4.93\" x2=\"9.17\" y2=\"9.17\" />\r\n  <line x1=\"14.83\" y1=\"14.83\" x2=\"19.07\" y2=\"19.07\" />\r\n  <line x1=\"14.83\" y1=\"9.17\" x2=\"19.07\" y2=\"4.93\" />\r\n  <line x1=\"4.93\" y1=\"19.07\" x2=\"9.17\" y2=\"14.83\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 28,
+  "fields": {
+    "provider": 10,
+    "name": "Դառնալ բաժանորդ",
+    "slug": "darnal_bajanord",
+    "icon_svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 29,
+  "fields": {
+    "provider": 10,
+    "name": "Վճարումներ",
+    "slug": "vcharum",
+    "icon_svg": "<rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" />\r\n  <line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 30,
+  "fields": {
+    "provider": 10,
+    "name": "Հեռախոսների և սարքավորումների ձեռք բերում",
+    "slug": "heraxos_sarqavorumner",
+    "icon_svg": "<path d=\"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\" />\r\n  <path d=\"M16 10a4 4 0 0 1-8 0\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 31,
+  "fields": {
+    "provider": 10,
+    "name": "Խորհրդատվություն և աջակցում",
+    "slug": "ajakcum",
+    "icon_svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n  <circle cx=\"12\" cy=\"12\" r=\"4\" />\r\n  <line x1=\"4.93\" y1=\"4.93\" x2=\"9.17\" y2=\"9.17\" />\r\n  <line x1=\"14.83\" y1=\"14.83\" x2=\"19.07\" y2=\"19.07\" />\r\n  <line x1=\"14.83\" y1=\"9.17\" x2=\"19.07\" y2=\"4.93\" />\r\n  <line x1=\"4.93\" y1=\"19.07\" x2=\"9.17\" y2=\"14.83\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 32,
+  "fields": {
+    "provider": 11,
+    "name": "Դառնալ բաժանորդ",
+    "slug": "darnal_bajanord",
+    "icon_svg": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 33,
+  "fields": {
+    "provider": 11,
+    "name": "Վճարումներ",
+    "slug": "vcharum",
+    "icon_svg": "<rect x=\"1\" y=\"4\" width=\"22\" height=\"16\" rx=\"2\" ry=\"2\" />\r\n  <line x1=\"1\" y1=\"10\" x2=\"23\" y2=\"10\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 34,
+  "fields": {
+    "provider": 11,
+    "name": "Հեռախոսների և սարքավորումների ձեռք բերում",
+    "slug": "heraxos_sarqavorumner",
+    "icon_svg": "<path d=\"M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z\" />\r\n  <path d=\"M16 10a4 4 0 0 1-8 0\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 35,
+  "fields": {
+    "provider": 11,
+    "name": "Խորհրդատվություն և աջակցում",
+    "slug": "ajakcum",
+    "icon_svg": "<circle cx=\"12\" cy=\"12\" r=\"10\" />\r\n  <circle cx=\"12\" cy=\"12\" r=\"4\" />\r\n  <line x1=\"4.93\" y1=\"4.93\" x2=\"9.17\" y2=\"9.17\" />\r\n  <line x1=\"14.83\" y1=\"14.83\" x2=\"19.07\" y2=\"19.07\" />\r\n  <line x1=\"14.83\" y1=\"9.17\" x2=\"19.07\" y2=\"4.93\" />\r\n  <line x1=\"4.93\" y1=\"19.07\" x2=\"9.17\" y2=\"14.83\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 36,
+  "fields": {
+    "provider": 12,
+    "name": "Ջրաչափի փոխարինում, տեղադրում",
+    "slug": "jrachap",
+    "icon_svg": "<path d=\"M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 37,
+  "fields": {
+    "provider": 12,
+    "name": "Ավարտական ակտի հաստատում",
+    "slug": "akti_hastatum",
+    "icon_svg": "<path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 38,
+  "fields": {
+    "provider": 13,
+    "name": "Գազի սարքի փոխարինում, տեղադրում",
+    "slug": "gazi_poxarinum",
+    "icon_svg": "<path d=\"M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 39,
+  "fields": {
+    "provider": 13,
+    "name": "Գազի հաշվիչի կապարակնքում",
+    "slug": "hashvich",
+    "icon_svg": "<path d=\"M7 11V7a5 5 0 0 1 10 0v4\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 40,
+  "fields": {
+    "provider": 14,
+    "name": "Հաշվիչի փոխարինում / տեղակայում",
+    "slug": "hashvichi_poxarinum",
+    "icon_svg": "<polygon points=\"13 2 3 14 12 14 11 22 21 10 12 10 13 2\" />"
+  }
+},
+{
+  "model": "core.action",
+  "pk": 41,
+  "fields": {
+    "provider": 14,
+    "name": "Հզորության փոխարինում",
+    "slug": "hzorutyan_poxarinum",
+    "icon_svg": "<polyline points=\"23 6 13.5 15.5 8.5 10.5 1 18\" />\r\n  <polyline points=\"17 6 23 6 23 12\" />"
+  }
+},
+{
+  "model": "core.qrcode",
+  "pk": 1,
+  "fields": {
+    "text": "9424b124-6842-4e80-9c5b-394a5b4a4ad6",
+    "image": "media/qr_codes/bbd4318a-8020-41d4-b736-81328b80b066.png",
+    "created_at": "2026-04-28T07:44:54.173Z"
+  }
+},
+{
+  "model": "core.qrcode",
+  "pk": 2,
+  "fields": {
+    "text": "a7d18cd6-5076-446e-baac-d10a632ff55d",
+    "image": "media/qr_codes/0b0eb8fb-c9f5-47b3-9af8-e428e9ad49ae.png",
+    "created_at": "2026-04-28T08:11:15.077Z"
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 1,
+  "fields": {
+    "full_name": "gor",
+    "phone_number": "N/A",
+    "email": null,
+    "category": 1,
+    "branch": 1,
+    "content_type": 7,
+    "object_id": 1,
+    "scheduled_at": "2026-04-28T11:33:00Z",
+    "created_at": "2026-04-28T07:33:54.098Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "655239eb-3e96-4684-aec8-1fe2dfe635be",
+    "qr_code": null
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 2,
+  "fields": {
+    "full_name": "gor",
+    "phone_number": "N/A",
+    "email": null,
+    "category": 1,
+    "branch": 1,
+    "content_type": 7,
+    "object_id": 1,
+    "scheduled_at": "2026-04-28T11:33:00Z",
+    "created_at": "2026-04-28T07:36:27.453Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "62d28ee6-f07d-4a09-812a-ec3e90a8ddb2",
+    "qr_code": null
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 3,
+  "fields": {
+    "full_name": "gor",
+    "phone_number": "N/A",
+    "email": null,
+    "category": 2,
+    "branch": 18,
+    "content_type": 7,
+    "object_id": 18,
+    "scheduled_at": "2026-04-28T11:37:00Z",
+    "created_at": "2026-04-28T07:37:37.042Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "a21f5571-3f2f-4160-ac81-cd32073edc41",
+    "qr_code": null
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 4,
+  "fields": {
+    "full_name": "gor",
+    "phone_number": "N/A",
+    "email": null,
+    "category": 3,
+    "branch": 24,
+    "content_type": 7,
+    "object_id": 25,
+    "scheduled_at": "2026-04-28T11:44:00Z",
+    "created_at": "2026-04-28T07:44:53.984Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "9424b124-6842-4e80-9c5b-394a5b4a4ad6",
+    "qr_code": 1
+  }
+},
+{
+  "model": "core.appointment",
+  "pk": 5,
+  "fields": {
+    "full_name": "gor",
+    "phone_number": "N/A",
+    "email": null,
+    "category": 2,
+    "branch": 18,
+    "content_type": 7,
+    "object_id": 17,
+    "scheduled_at": "2026-04-28T12:11:00Z",
+    "created_at": "2026-04-28T08:11:14.978Z",
+    "status": "pending",
+    "notes": null,
+    "verification_code": "a7d18cd6-5076-446e-baac-d10a632ff55d",
+    "qr_code": 2
+  }
 }
 ]

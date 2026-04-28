@@ -10,7 +10,7 @@ from .models import QRCode
 
 
 def create_qr_and_save(text):
-    # ✅ reuse if exists
+    #  reuse if exists
     if QRCode.objects.filter(text=text).exists():
         return QRCode.objects.get(text=text)
 
@@ -30,7 +30,7 @@ def create_qr_and_save(text):
     return qr_instance
 
 
-# ✅ OPTIONAL (for testing only)
+#  OPTIONAL (for testing only)
 @api_view(['POST'])
 def create_qr(request):
     text = request.data.get("text")
@@ -47,7 +47,7 @@ def create_qr(request):
     })
 
 
-# ✅ download QR
+#  download QR
 @api_view(['GET'])
 def download_qr(request, qr_id):
     try:

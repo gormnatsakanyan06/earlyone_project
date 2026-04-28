@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Digital Ticket - Earlyone</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: #0a0f1a;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .ticket-card {
+      background: white;
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ticket-card::before, .ticket-card::after {
+      content: '';
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #0a0f1a;
+      border-radius: 50%;
+      top: 70%;
+      transform: translateY(-50%);
+    }
+
+    .ticket-card::before { left: -15px; }
+    .ticket-card::after { right: -15px; }
+
+    .dash-line {
+      border-top: 2px dashed #f1f5f9;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px]"></div>
+
+<div class="relative w-full max-w-sm mx-auto p-6">
+  <div class="ticket-card shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
+
+    <!-- HEADER -->
+    <div class="p-8 text-center">
+      <div class="inline-flex p-3 bg-slate-50 rounded-2xl border border-slate-100 mb-4">
+        <img src="{{ appointment.branch.provider.logo.url }}" class="h-8 w-auto">
+      </div>
+
+      <h1 class="text-xl font-bold text-slate-900">
+        {{ appointment.branch.provider.name }}
+      </h1>
+
+      <p class="text-slate-500 text-sm font-medium">
+        {{ appointment.branch.name }}
+      </p>
+    </div>
+
+    <!-- QR -->
+    <div class="px-8 pb-8 text-center">
+      <div class="bg-slate-50 border-2 border-dashed border-slate-200 rounded-3xl p-6 mb-4">
+
+        <div class="w-48 h-48 mx-auto bg-white rounded-xl shadow-sm flex items-center justify-center border border-slate-100">
+
+          {% if appointment.qr_code %}
+            <img src="{{ appointment.qr_code.image.url }}" class="w-full h-full object-contain">
+          {% else %}
+            <span class="text-xs text-gray-400">No QR yet</span>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <!-- Ticket number -->
+      <div class="text-3xl font-black tracking-widest text-blue-600 mb-1">
+        #{{ appointment.id }}
+      </div>
+
+      <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">
+        Ձեր հերթի համարը
+      </p>
+    </div>
+
+    <!-- divider -->
+    <div class="px-4 flex items-center">
+      <div class="dash-line"></div>
+    </div>
+
+    <!-- INFO -->
+    <div class="p-8 space-y-4">
+
+      <div class="flex justify-between">
+        <span class="text-slate-400 text-xs font-bold uppercase">Ծառայություն</span>
+        <span class="text-slate-900 text-sm font-bold">
+          {{ appointment.service_action.name }}
+        </span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="text-slate-400 text-xs font-bold uppercase">Ամսաթիվ</span>
+        <span class="text-slate-900 text-sm font-bold">
+          {{ appointment.scheduled_at|date:"Y-m-d" }}
+        </span>
+      </div>
+
+      <div class="flex justify-between">
+        <span class="text-slate-400 text-xs font-bold uppercase">Ժամ</span>
+        <span class="text-slate-900 text-sm font-bold">
+          {{ appointment.scheduled_at|time:"H:i" }}
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="mt-6 text-center">
+    <p class="text-slate-500 text-xs italic">
+      Շնորհակալություն Earlyone-ից օգտվելու համար
+    </p>
+  </div>
+</div>
+
+</body>
+</html>

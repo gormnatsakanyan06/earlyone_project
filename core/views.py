@@ -17,6 +17,9 @@ from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.views.decorators.csrf import csrf_exempt
 
+
+from .qr import create_qr_and_save   # or wherever you saved it
+
 def category_detail_view(request, category_slug):
     category = get_object_or_404(Category, slug=category_slug)
     providers = category.providers.all()
@@ -151,49 +154,57 @@ def datetime_view(request, category_slug, provider_slug, branch_slug, hash):
         "provider": provider,
         "branch": branch,
     })
-# from .qr import create_qr_and_save
 
-# @api_view(['POST'])
-# def create_appointment(request):
-#     full_name = request.data.get('full_name')
-#     phone = request.data.get('phone')
-#     category = request.data.get('category')
-#     action_id = request.data.get('action_id')
-#     scheduled_time = request.data.get('scheduled_time')
-
-#     model_map = {
-#         'finance': BankAction,
-#         'government': GovernmentAction,
-#         'telecom': TelecomAction,
-#         'utility': ServiceAction,
-#     }
-
-#     selected_model = model_map.get(category)
-
-#     if not selected_model:
-#         return Response({"error": "Invalid category"}, status=400)
-
-#     content_type = ContentType.objects.get_for_model(selected_model)
-#     appointment = Appointment.objects.create(
-#         full_name=full_name,
-#         phone_number=phone,
-#         category=category,
-#         content_type=content_type,
-#         object_id=action_id,
-#         scheduled_at=scheduled_time
-#     )
-
-#     qr = create_qr_and_save(str(appointment.verification_code))
-#     appointment.qr_code = qr
-#     appointment.save()
-
-#     return Response({
-#         "appointment_id": appointment.id,
-#         "verification_code": str(appointment.verification_code),
-#         "qr_image": qr.image.url
-#     })
+#QR
+#QR
+#QR
 
 
+@csrf_exempt
+@api_view(['POST'])
+def create_appointment(request):
+    data = request.data
 
+    try:
+        category = Category.objects.get(slug=data['category'])
+        provider = Provider.objects.get(slug=data['provider'], category=category)
+        branch = Branch.objects.get(slug=data['branch'], provider=provider)
+        action = Action.objects.get(id=data['action'], provider=provider)
+
+        scheduled_at = datetime.strptime(
+            f"{data['date']} {data['time']}",
+            "%Y-%m-%d %H:%M"
+        )
+
+        content_type = ContentType.objects.get_for_model(Action)
+
+        appointment = Appointment.objects.create(
+            full_name=request.user.username if request.user.is_authenticated else "Guest",
+            phone_number="N/A",
+            category=category,
+            branch=branch,
+            content_type=content_type,
+            object_id=action.id,
+            scheduled_at=scheduled_at
+        )
+
+        # ✅ CREATE QR HERE
+        qr_text = str(appointment.verification_code)
+
+        qr = create_qr_and_save(qr_text)
+
+        appointment.qr_code = qr
+        appointment.save()
+
+        return Response({
+            "success": True,
+            "appointment_id": appointment.id
+        })
+
+    except Exception as e:
+        return Response({
+            "success": False,
+            "error": str(e)
+        }, status=400)
 
 
